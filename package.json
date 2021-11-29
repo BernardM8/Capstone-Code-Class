@@ -1,0 +1,20 @@
+{
+  "name": "realtimewebapp",
+  "version": "1.0.0",
+  "description": "This is a real-time website that sends ans receives text data",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "sockets",
+    "firebase"
+  ],
+  "author": "glodi k",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "firebase": "^9.4.1",
+    "socket.io": "^4.3.2"
+  }
+}

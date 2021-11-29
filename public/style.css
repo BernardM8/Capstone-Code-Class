@@ -1,0 +1,22 @@
+body 
+{
+  padding-top: 60px;
+}
+
+#code-area 
+{
+  width: 90%;
+  font-size: 1em;
+  font-family: serif;
+}
+
+label {
+  display: block;
+  margin: 0 0 5px 0;
+}
+  
+header {
+  border: dotted 1px green;
+  padding: 15px;
+  margin: 0 0 15px 0;
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<link rel="stylesheet" href="http://localhost:3000/style.css">
+			
+		<script src="/socket.io/socket.io.js"></script>
+
+		<title> Online Coding Demo </title>
+	</head>
+	
+	
+	<body>
+		<div class="container">			
+			<label for="code-area">Your text goes here</label>
+			<textarea id="code-area" rows="25"></textarea> 
+			<hr>
+		</div>
+	</body>
+
+	<!-- <script src="http://localhost:3000/Real-timeUpdate.js"></script> -->
+	<script type="module">
+		import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.1/firebase-app.js";
+		import { getDatabase, ref, set, onValue } from "https://www.gstatic.com/firebasejs/9.4.1/firebase-database.js";
+
+		const firebaseConfig = {
+		  apiKey: "AIzaSyC4FOYwF9ULsoVZqfAGS5vX4h58Cndya-g",
+		  authDomain: "real-time-pair-code-editing.firebaseapp.com",
+		  databaseURL: "https://real-time-pair-code-editing-default-rtdb.firebaseio.com",
+		  projectId: "real-time-pair-code-editing",
+		  storageBucket: "real-time-pair-code-editing.appspot.com",
+		  messagingSenderId: "1007756107087",
+		  appId: "1:1007756107087:web:958a9177a63f545568393a",
+		  measurementId: "G-SFCK95DR3S"
+		};
+	  
+		const app = initializeApp(firebaseConfig);
+		const database = getDatabase(app);
+		const dataRef  = ref(database, 'Edits/');
+		
+
+		const JsCodeArea = document.getElementById('code-area');
+
+		//var socket = io.connect('http://localhost:3000');
+		//socket.on('text', BroadCastData);
+		onValue(dataRef, BroadCastData);
+
+		JsCodeArea.addEventListener('input', Listener);
+
+
+		function BroadCastData(data)
+		{
+			var txtarea = document.getElementById('code-area');
+			txtarea.value = data.val().userEdit;
+		}
+
+		function Listener() 
+		{
+			var jsedit = 
+			{
+				userEdit : JsCodeArea.value
+			};
+			//socket.emit('text', edit)
+			set(dataRef, jsedit);
+		}
+	</script>
+
+</html>
