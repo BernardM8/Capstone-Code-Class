@@ -1,5 +1,6 @@
 //Firebase section
-import {editor} from "./ide.js"
+//import {editor} from "./ide.js"
+const {editor} =require( './ide.js')
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.1/firebase-app.js";
 import { getDatabase, ref, set, onValue } from "https://www.gstatic.com/firebasejs/9.4.1/firebase-database.js";
 // TODO: Add SDKs for Firebase products that you want to use
