@@ -3,7 +3,7 @@ const JsCodeArea = document.getElementById("editor");
 let editor
 let editor2
 let session
-
+let session2
 
 //// Create ACE
 window.onload = function(){

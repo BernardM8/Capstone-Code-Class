@@ -22,9 +22,11 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 const dataRef  = ref(database, 'User1/')
-//const JsCodeArea = document.getElementById("editor");
 
-let editor
+
+const JsCodeArea = document.getElementById("editor");
+
+//let editor
 
 
 JsCodeArea.addEventListener('input', Listener);
