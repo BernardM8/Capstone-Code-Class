@@ -15,10 +15,10 @@ window.onload = function(){
   editor.session.setMode("ace/mode/c_cpp");
 
 
-  editor2 = ace.edit("editor2");
-  editor2.setTheme("ace/theme/monokai");
-  session2 = editor2.getSession();
-  editor2.session2.setMode("ace/mode/c_cpp");
+  //editor2 = ace.edit("editor2");
+  //editor2.setTheme("ace/theme/monokai");
+  //session2 = editor2.getSession();
+  //editor2.session2.setMode("ace/mode/c_cpp");
 }
 
 //Change Languae select section
