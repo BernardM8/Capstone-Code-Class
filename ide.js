@@ -1,3 +1,6 @@
+
+export default function getEditor()
+{return editor;}
 const JsCodeArea = document.getElementById("editor");
 
 let editor
