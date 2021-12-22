@@ -1,28 +1,3 @@
-//Firebase section
-//import { initializeApp,getDatabase, ref, set, onValue } from "ide.html";
-
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.1/firebase-app.js";
-import { getDatabase, ref, set, onValue } from "https://www.gstatic.com/firebasejs/9.4.1/firebase-database.js";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-  apiKey: "AIzaSyDICcooHUciQZvAs_dPpExVxqBhtJMojbY",
-  authDomain: "codelab-database-1.firebaseapp.com",
-  databaseURL: "https://codelab-database-1-default-rtdb.firebaseio.com",
-  projectId: "codelab-database-1",
-  storageBucket: "codelab-database-1.appspot.com",
-  messagingSenderId: "573387563239",
-  appId: "1:573387563239:web:161f23412c218ba50ac242",
-  measurementId: "G-4XTVC35JQL"
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const database = getDatabase(app);
-const dataRef  = ref(database, 'User1/')
 const JsCodeArea = document.getElementById("editor");
 
 let editor
@@ -42,8 +17,8 @@ window.onload = function(){
 
   editor2 = ace.edit("editor2");
   editor2.setTheme("ace/theme/monokai");
-  session = editor2.getSession();
-  editor2.session.setMode("ace/mode/c_cpp");
+  session2 = editor2.getSession();
+  editor2.session2.setMode("ace/mode/c_cpp");
 }
 
 //Change Languae select section
@@ -54,39 +29,6 @@ function changeLanguage(){
   else if(language == 'node' )editor.session.setMode("lib/ace/mode/javascript");
 }
 
-JsCodeArea.addEventListener('input', Listener);
-  onValue(dataRef, UpdateCodeEditor);
-
-  //function for getter and set value in ace editor
-  function UpdateCodeEditor(data)
-  {
-    //var txtarea = document.getElementById("editor");
-    var txtarea = data.val().codeEditor;;
-    //var txtarea = editor.session.getValue();
-    console.log("txtarea = "+txtarea);
-    if (txtarea == null||undefined){txtarea="";}
-    
-    //get value from firebase
-    //else {txtarea.value = data.val().codeEditor;} 
-    //document.getElementById("editor").value=
-    editor.setValue(txtarea);
-  }
-
-
-  //function listener and setter for firebase
-  function Listener() 
-  { 
-    var CodeArea=editor.getSession().getValue();
-    //var CodeArea= document.getElementById("editor");
-    console.log("Listener = "+CodeArea);
-
-    var jsedit = 
-    {
-      //codeEditor : JsCodeArea.value
-      codeEditor : CodeArea
-    };
-    set(dataRef, jsedit);
-  }
 
 // Run button to compile code       
 function executeCode(){
