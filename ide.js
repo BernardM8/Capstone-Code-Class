@@ -19,7 +19,7 @@ window.onload = function(){
 
 
 const JsCodeArea = document.getElementById("editor");
-var firebase1=new firebase();
+var firebase1=new firebase.constructor();
 
 
 var txtarea=firebase1.updateEditor(aceEditor)
