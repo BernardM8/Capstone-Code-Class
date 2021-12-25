@@ -25,7 +25,7 @@ var txtarea=firebase1.UpdateCodeEditor(aceEditor)
 console.log("txtarea returned = "+txtarea);
 
 //aceEditor.setValue(txtarea);
-JsCodeArea.addEventListener('input', firebase1.Listener(aceEditor));
+//JsCodeArea.addEventListener('input', firebase1.Listener(aceEditor));
 
 
 //Change Languae select section
