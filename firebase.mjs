@@ -1,6 +1,7 @@
-//Firebase section
-//import {editor} from "./ide.js"
-//const {editor} =require( './ide.js')
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.1/firebase-app.js";
+import { getDatabase, ref, set, onValue } from "https://www.gstatic.com/firebasejs/9.4.1/firebase-database.js";
 
 //Fields
 let app ;
@@ -10,11 +11,6 @@ let dataRef;
 
 //constructor
 function firebase(){
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.1/firebase-app.js";
-import { getDatabase, ref, set, onValue } from "https://www.gstatic.com/firebasejs/9.4.1/firebase-database.js";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
@@ -32,7 +28,6 @@ const firebaseConfig = {
 this.app = initializeApp(firebaseConfig);
 this.database = getDatabase(app);
 this.dataRef  = ref(database, 'User1/')
-
 }
 
 //const JsCodeArea = document.getElementById("editor");
