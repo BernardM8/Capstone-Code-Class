@@ -13,8 +13,7 @@ class firebase{
 
 //constructor
 constructor(){
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+// Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyDICcooHUciQZvAs_dPpExVxqBhtJMojbY",
   authDomain: "codelab-database-1.firebaseapp.com",
@@ -39,7 +38,7 @@ this.dataRef  = ref(database, 'User1/');
 
 //JsCodeArea.addEventListener('input', Listener);
 updateEditor(editor){
-  onValue(dataRef, UpdateCodeEditor(dataRef,editor));
+  return onValue(dataRef, UpdateCodeEditor(dataRef,editor));
 }
 
   //function for getter and set value in ace editor
@@ -54,7 +53,8 @@ updateEditor(editor){
     //get value from firebase
     //else {txtarea.value = data.val().codeEditor;} 
     //document.getElementById("editor").value=
-    editor.setValue(txtarea);
+    //editor.setValue(txtarea);
+    return txtarea;
   }
 
 
