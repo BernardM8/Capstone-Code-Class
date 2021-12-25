@@ -55,8 +55,7 @@ this.dataRef  = dataRef;
        console.log("data = "+ data);
        return data;
      });
-     console.log("data2 = "+ data);
-     console.log("data3 = "+ text);
+     console.log("text = "+ text);
      return text;
   }
 
