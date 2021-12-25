@@ -1,7 +1,7 @@
 
 //export default function getEditor()
 //{return editor;}
-import * as firebaseModule from './firebase.mjs';
+import firebase from './firebase.mjs';
 
 let aceEditor
 let session
@@ -19,7 +19,8 @@ window.onload = function(){
 
 
 const JsCodeArea = document.getElementById("editor");
-firebase1=firebaseModule.firebase();
+var firebase1=new firebase();
+//firebase1=firebaseModule.firebase();
 
 firebase1.updateEditor(aceEditor)
 

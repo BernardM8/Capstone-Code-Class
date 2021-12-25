@@ -3,14 +3,16 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.1/firebase-app.js";
 import { getDatabase, ref, set, onValue } from "https://www.gstatic.com/firebasejs/9.4.1/firebase-database.js";
 
+class firebase{
+
 //Fields
-let app ;
-let database;
-let dataRef;
+//var app ;
+//let database;
+//let dataRef;
 
 
 //constructor
-function firebase(){
+constructor(){
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
@@ -27,7 +29,7 @@ const firebaseConfig = {
 // Initialize Firebase
 this.app = initializeApp(firebaseConfig);
 this.database = getDatabase(app);
-this.dataRef  = ref(database, 'User1/')
+this.dataRef  = ref(database, 'User1/');
 }
 
 //const JsCodeArea = document.getElementById("editor");
@@ -36,12 +38,12 @@ this.dataRef  = ref(database, 'User1/')
 
 
 //JsCodeArea.addEventListener('input', Listener);
-function updateEditor(editor){
+updateEditor(editor){
   onValue(dataRef, UpdateCodeEditor(dataRef,editor));
 }
 
   //function for getter and set value in ace editor
-  function UpdateCodeEditor(data,editor)
+  UpdateCodeEditor(data,editor)
   {
     //var txtarea = document.getElementById("editor");
     var txtarea = data.val().codeEditor;;
@@ -57,7 +59,7 @@ function updateEditor(editor){
 
 
   //function listener and setter for firebase
-  function Listener(editor) 
+  Listener(editor) 
   { 
     var CodeArea=editor.getSession().getValue();
     console.log("Listener = "+CodeArea);
@@ -69,3 +71,4 @@ function updateEditor(editor){
     };
     set(dataRef, jsedit);
   }
+}
