@@ -44,12 +44,12 @@ this.dataRef  = dataRef;
     
     //set value in ace editor
     editor.setValue(txtarea);
-    return txtarea;
+    //return txtarea;
   }
 
-  /*updateEditor(editor){
-    return onValue(this.dataRef, UpdateCodeEditor(this.dataRef,editor));
-  }*/
+  updateEditor(editor){
+     onValue(this.dataRef, UpdateCodeEditor(editor));
+  }
 
 
   //function listener and setter for firebase

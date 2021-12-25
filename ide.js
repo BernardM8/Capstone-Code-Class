@@ -21,8 +21,9 @@ window.onload = function(){
 const JsCodeArea = document.getElementById("editor");
 
 var firebase1=new Firebase();
-var txtarea=firebase1.UpdateCodeEditor(aceEditor)
-console.log("txtarea returned = "+txtarea);
+firebase1.UpdateCodeEditor(aceEditor)
+//var txtarea=firebase1.UpdateCodeEditor(aceEditor)
+//console.log("txtarea returned = "+txtarea);
 
 //aceEditor.setValue(txtarea);
 //JsCodeArea.addEventListener('input', firebase1.Listener(aceEditor));
