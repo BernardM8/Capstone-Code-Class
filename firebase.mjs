@@ -49,25 +49,17 @@ this.dataRef  = dataRef;
   }*/
 
 
-  /*getCode(){
+  updateEditor(editor){
      //onValue(this.dataRef, UpdateCodeEditor(editor));
      return onValue(this.dataRef, (snapshot)=>{
        const data = snapshot.val().codeEditor;
        console.log("data = "+ data);
-       return data;
+       editor.setValue(data);
      });
-     //console.log("text = "+ text);
-     //return text;
-  }*/
+    
+  }
 
-  getCode(){
-    this.dataRef.on('value', (snapshot) => {
-      console.log(snapshot.val().codeEditor);
-      return snapshot.val().codeEditor;
-    }, (errorObject) => {
-      console.log('The read failed: ' + errorObject.name);
-    }); 
- }
+  
 
 
 
