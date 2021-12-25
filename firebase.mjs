@@ -48,7 +48,7 @@ this.dataRef  = dataRef;
     //return txtarea;
   }*/
 
-  getCode(editor){
+  getCode(){
      //onValue(this.dataRef, UpdateCodeEditor(editor));
      var text = onValue(this.dataRef, (snapshot)=>{
        const data = snapshot.val().codeEditor;
@@ -56,7 +56,6 @@ this.dataRef  = dataRef;
        return data;
      });
      return text;
-     //editor.setValue(data);
   }
 
 
