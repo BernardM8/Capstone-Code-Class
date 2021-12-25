@@ -33,12 +33,11 @@ this.dataRef  = dataRef;
 
 
   //function for getter and set value in ace editor
-  UpdateCodeEditor(editor)
+  UpdateCodeEditor(editor,data)
   {
     //get value from firebase
-
-    //var txtarea = data.val().codeEditor;
-    var txtarea = get(codeEditor);
+    var txtarea = data.val().codeEditor;
+    //var txtarea = get(codeEditor);
     console.log("txtarea = "+txtarea);
     
     if (txtarea == null||undefined){txtarea="";}
