@@ -1,6 +1,6 @@
 //Firebase section
 //import {editor} from "./ide.js"
-const {editor} =require( './ide.js')
+//const {editor} =require( './ide.js')
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.1/firebase-app.js";
 import { getDatabase, ref, set, onValue } from "https://www.gstatic.com/firebasejs/9.4.1/firebase-database.js";
 // TODO: Add SDKs for Firebase products that you want to use
@@ -25,17 +25,18 @@ const database = getDatabase(app);
 const dataRef  = ref(database, 'User1/')
 
 
-const JsCodeArea = document.getElementById("editor");
+//const JsCodeArea = document.getElementById("editor");
 
 //let editor
 
 
-JsCodeArea.addEventListener('input', Listener);
-  onValue(dataRef, UpdateCodeEditor);
-
+//JsCodeArea.addEventListener('input', Listener);
+function updateEditor(editor){
+  onValue(dataRef, UpdateCodeEditor(dataRef,editor));
+}
 
   //function for getter and set value in ace editor
-  function UpdateCodeEditor(data)
+  function UpdateCodeEditor(data,editor)
   {
     //var txtarea = document.getElementById("editor");
     var txtarea = data.val().codeEditor;;
@@ -51,10 +52,9 @@ JsCodeArea.addEventListener('input', Listener);
 
 
   //function listener and setter for firebase
-  function Listener() 
+  function Listener(editor) 
   { 
     var CodeArea=editor.getSession().getValue();
-    //var CodeArea= document.getElementById("editor");
     console.log("Listener = "+CodeArea);
 
     var jsedit = 

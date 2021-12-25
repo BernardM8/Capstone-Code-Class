@@ -1,12 +1,11 @@
 
 //export default function getEditor()
 //{return editor;}
-const JsCodeArea = document.getElementById("editor");
+import * as firebaseModule from '/firebase.mjs';
 
 let editor
-let editor2
 let session
-let session2
+
 
 //// Create ACE
 window.onload = function(){
@@ -16,13 +15,12 @@ window.onload = function(){
   //session.setUseWrapMode(true);
   //session.setUseWorker(false);
   editor.session.setMode("ace/mode/c_cpp");
-
-
-  //editor2 = ace.edit("editor2");
-  //editor2.setTheme("ace/theme/monokai");
-  //session2 = editor2.getSession();
-  //editor2.session2.setMode("ace/mode/c_cpp");
 }
+
+
+const JsCodeArea = document.getElementById("editor");
+JsCodeArea.addEventListener('input', firebaseModule.Listener(editor));
+
 
 //Change Languae select section
 function changeLanguage(){
