@@ -1,7 +1,7 @@
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.1/firebase-app.js";
-import { getDatabase, ref, set, onValue } from "https://www.gstatic.com/firebasejs/9.4.1/firebase-database.js";
+import { getDatabase, ref, set, get, onValue } from "https://www.gstatic.com/firebasejs/9.4.1/firebase-database.js";
 
 export default class Firebase{
 
@@ -36,7 +36,9 @@ this.dataRef  = dataRef;
   UpdateCodeEditor(editor)
   {
     //get value from firebase
-    var txtarea = this.dataRef.val().codeEditor;
+
+    //var txtarea = data.val().codeEditor;
+    var txtarea = get(codeEditor);
     console.log("txtarea = "+txtarea);
     
     if (txtarea == null||undefined){txtarea="";}
