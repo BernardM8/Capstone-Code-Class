@@ -58,7 +58,7 @@ this.dataRef  = dataRef;
      });
   }
 
-  UpdateEditor(editor,data)
+  updateEditor(editor,data)
   {
     //set value in ace editor
     editor.setValue(data);
