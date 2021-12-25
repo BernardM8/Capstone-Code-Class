@@ -51,12 +51,13 @@ this.dataRef  = dataRef;
 
   updateEditor(editor){
      //onValue(this.dataRef, UpdateCodeEditor(editor));
-     return onValue(this.dataRef, (snapshot)=>{
+     return Observable.create((observer) => {
+     onValue(this.dataRef, (snapshot)=>{
        const data = snapshot.val().codeEditor;
        console.log("data = "+ data);
-       editor.setValue(data);
+       //editor.setValue(data);
      });
-    
+    });
   }
 
   

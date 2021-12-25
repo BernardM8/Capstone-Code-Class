@@ -18,11 +18,11 @@ window.onload = function(){
 //const JsCodeArea = document.getElementById("editor");
 
 var firebase1=new Firebase();
-firebase1.updateEditor(aceEditor)
+//firebase1.updateEditor(aceEditor)
 //editor.setValue(data);
 
-//var txtarea=firebase1.getCode(aceEditor);
-//console.log("txtarea returned = "+txtarea);
+var txtarea=firebase1.getCode(aceEditor);
+console.log("txtarea returned = "+txtarea);
 
 //aceEditor.setValue(txtarea);
 //JsCodeArea.addEventListener('input', firebase1.Listener(aceEditor));
