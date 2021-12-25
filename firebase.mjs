@@ -49,18 +49,21 @@ this.dataRef  = dataRef;
   }*/
 
 
-  getCode(){
-     //onValue(this.dataRef, UpdateCodeEditor(editor));
-     return Observable.create((observer) => {
+  getCode(editor){
      onValue(this.dataRef, (snapshot)=>{
        const data = snapshot.val().codeEditor;
        console.log("data = "+ data);
        //editor.setValue(data);
+       updateEditor(editor,data)
      });
-    });
   }
 
-  
+  UpdateEditor(editor,data)
+  {
+    //set value in ace editor
+    editor.setValue(data);
+  }
+    
 
 
 
