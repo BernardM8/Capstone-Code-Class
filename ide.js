@@ -1,7 +1,7 @@
 
 //export default function getEditor()
 //{return editor;}
-import * as firebaseModule from '/firebase.mjs';
+import * as firebaseModule from './firebase.mjs';
 
 let editor
 let session
