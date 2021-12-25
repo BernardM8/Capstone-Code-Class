@@ -30,24 +30,26 @@ this.dataRef  = dataRef;
 
 
 //JsCodeArea.addEventListener('input', Listener);
-updateEditor(editor){
-  return onValue(this.dataRef, UpdateCodeEditor(this.dataRef,editor));
-}
+
 
   //function for getter and set value in ace editor
   UpdateCodeEditor(data,editor)
   {
-    //var txtarea = document.getElementById("editor");
-    var txtarea = data.val().codeEditor;;
-    //var txtarea = editor.session.getValue();
+    //get value from firebase
+    var txtarea = data.val().codeEditor;
     console.log("txtarea = "+txtarea);
+    
+    //var txtarea = editor.session.getValue();
+    
     if (txtarea == null||undefined){txtarea="";}
     
-    //get value from firebase
-    //else {txtarea.value = data.val().codeEditor;} 
-    //document.getElementById("editor").value=
-    //editor.setValue(txtarea);
+    //set value in ace editor
+    editor.setValue(txtarea);
     return txtarea;
+  }
+
+  updateEditor(editor){
+    return onValue(this.dataRef, UpdateCodeEditor(this.dataRef,editor));
   }
 
 
