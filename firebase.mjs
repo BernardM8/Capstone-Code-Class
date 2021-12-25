@@ -26,9 +26,12 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-this.app = initializeApp(firebaseConfig);
-this.database = getDatabase(app);
-this.dataRef  = ref(database, 'User1/');
+var app = initializeApp(firebaseConfig);
+var database = getDatabase(app);
+var dataRef  = ref(database, 'User1/');
+this.app  = app;
+this.database  = database;
+this.dataRef  = dataRef;
 }
 
 //const JsCodeArea = document.getElementById("editor");
