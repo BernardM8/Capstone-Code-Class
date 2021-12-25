@@ -24,7 +24,7 @@ var firebase1=new Firebase();
 var txtarea=firebase1.UpdateCodeEditor(aceEditor)
 console.log("txtarea returned = "+txtarea);
 
-aceEditor.setValue(txtarea);
+//aceEditor.setValue(txtarea);
 //JsCodeArea.addEventListener('input', firebaseModule.Listener(editor));
 
 

@@ -36,10 +36,8 @@ this.dataRef  = dataRef;
   UpdateCodeEditor(editor)
   {
     //get value from firebase
-    var txtarea = data.val().codeEditor;
+    var txtarea = this.dataRef.val().codeEditor;
     console.log("txtarea = "+txtarea);
-
-    //var txtarea = editor.session.getValue();
     
     if (txtarea == null||undefined){txtarea="";}
     
