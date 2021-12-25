@@ -32,23 +32,30 @@ this.dataRef  = dataRef;
 //JsCodeArea.addEventListener('input', Listener);
 
 
-  //function for getter and set value in ace editor
+  /*//function for getter and set value in ace editor
   UpdateCodeEditor(editor,data)
   {
     //get value from firebase
-    var txtarea = data.val().codeEditor;
+    //var txtarea = data.val().codeEditor;
     //var txtarea = get(codeEditor);
-    console.log("txtarea = "+txtarea);
-    
-    if (txtarea == null||undefined){txtarea="";}
+    //console.log("txtarea = "+txtarea);
+    console.log("data = "+data);
+    //if (txtarea == null||undefined){txtarea="";}
     
     //set value in ace editor
-    editor.setValue(txtarea);
+    editor.setValue(data);
+    //editor.setValue(txtarea);
     //return txtarea;
-  }
+  }*/
 
   updateEditor(editor){
-     onValue(this.dataRef, UpdateCodeEditor(editor));
+     //onValue(this.dataRef, UpdateCodeEditor(editor));
+     onValue(this.dataRef, (snapshot)=>{
+       const data = snapshot.val();
+       console.log("data = "+ data);
+       editor.setValue(data);;
+     });
+
   }
 
 
