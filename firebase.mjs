@@ -50,13 +50,13 @@ this.dataRef  = dataRef;
 
   getCode(){
      //onValue(this.dataRef, UpdateCodeEditor(editor));
-     var text = onValue(this.dataRef, (snapshot)=>{
+     return onValue(this.dataRef, (snapshot)=>{
        const data = snapshot.val().codeEditor;
        console.log("data = "+ data);
        return data;
      });
-     console.log("text = "+ text);
-     return text;
+     //console.log("text = "+ text);
+     //return text;
   }
 
 
