@@ -3,31 +3,34 @@
 //{return editor;}
 import * as firebaseModule from './firebase.mjs';
 
-let editor
+let aceEditor
 let session
 
 
 //// Create ACE
 window.onload = function(){
-  editor = ace.edit("editor");
-  editor.setTheme("ace/theme/monokai");
-  session = editor.getSession();
+  aceEditor = ace.edit("editor");
+  aceEditor.setTheme("ace/theme/monokai");
+  session = aceEditor.getSession();
   //session.setUseWrapMode(true);
   //session.setUseWorker(false);
-  editor.session.setMode("ace/mode/c_cpp");
+  aceEditor.session.setMode("ace/mode/c_cpp");
 }
 
 
 const JsCodeArea = document.getElementById("editor");
-JsCodeArea.addEventListener('input', firebaseModule.Listener(editor));
+
+firebaseModule.updateEditor(aceEditor)
+
+//JsCodeArea.addEventListener('input', firebaseModule.Listener(editor));
 
 
 //Change Languae select section
 function changeLanguage(){
   let language = $("#languages").val();
-  if(language == 'java' )editor.session.setMode("lib/ace/mode/java");
-  else if(language == 'python' )editor.session.setMode("lib/ace/mode/python");
-  else if(language == 'node' )editor.session.setMode("lib/ace/mode/javascript");
+  if(language == 'java' )aceEditor.session.setMode("lib/ace/mode/java");
+  else if(language == 'python' )aceEditor.session.setMode("lib/ace/mode/python");
+  else if(language == 'node' )aceEditor.session.setMode("lib/ace/mode/javascript");
 }
 
 
@@ -35,7 +38,7 @@ function changeLanguage(){
 function executeCode(){
   
   //var CodeArea= document.getElementById("editor").value;
-  var CodeArea=editor.getSession().getValue();
+  var CodeArea=aceEditor.getSession().getValue();
   console.log(CodeArea);
   //console.log(CodeArea.childNodes[0]);
   //Sockets
