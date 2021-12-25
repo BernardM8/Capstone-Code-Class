@@ -5,25 +5,19 @@ import { getDatabase, ref, set, onValue } from "https://www.gstatic.com/firebase
 
 export default class Firebase{
 
-//Fields
-//var app ;
-//let database;
-//let dataRef;
-
-
 //constructor
 constructor(){
-// Firebase configuration
-const firebaseConfig = {
-  apiKey: "AIzaSyDICcooHUciQZvAs_dPpExVxqBhtJMojbY",
-  authDomain: "codelab-database-1.firebaseapp.com",
-  databaseURL: "https://codelab-database-1-default-rtdb.firebaseio.com",
-  projectId: "codelab-database-1",
-  storageBucket: "codelab-database-1.appspot.com",
-  messagingSenderId: "573387563239",
-  appId: "1:573387563239:web:161f23412c218ba50ac242",
-  measurementId: "G-4XTVC35JQL"
-};
+  // Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyDICcooHUciQZvAs_dPpExVxqBhtJMojbY",
+    authDomain: "codelab-database-1.firebaseapp.com",
+    databaseURL: "https://codelab-database-1-default-rtdb.firebaseio.com",
+    projectId: "codelab-database-1",
+    storageBucket: "codelab-database-1.appspot.com",
+    messagingSenderId: "573387563239",
+    appId: "1:573387563239:web:161f23412c218ba50ac242",
+    measurementId: "G-4XTVC35JQL"
+  };
 
 // Initialize Firebase
 var app = initializeApp(firebaseConfig);
@@ -34,14 +28,10 @@ this.database  = database;
 this.dataRef  = dataRef;
 }
 
-//const JsCodeArea = document.getElementById("editor");
-
-//let editor
-
 
 //JsCodeArea.addEventListener('input', Listener);
 updateEditor(editor){
-  return onValue(dataRef, UpdateCodeEditor(dataRef,editor));
+  return onValue(this.dataRef, UpdateCodeEditor(this.dataRef,editor));
 }
 
   //function for getter and set value in ace editor
@@ -72,6 +62,6 @@ updateEditor(editor){
       //codeEditor : JsCodeArea.value
       codeEditor : CodeArea
     };
-    set(dataRef, jsedit);
+    set(this.dataRef, jsedit);
   }
 }
