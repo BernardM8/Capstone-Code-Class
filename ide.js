@@ -22,6 +22,8 @@ const JsCodeArea = document.getElementById("editor");
 
 var firebase1=new Firebase();
 firebase1.updateEditor(aceEditor)
+//editor.setValue(data);
+
 //var txtarea=firebase1.UpdateCodeEditor(aceEditor)
 //console.log("txtarea returned = "+txtarea);
 
