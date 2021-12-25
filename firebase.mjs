@@ -1,6 +1,14 @@
 //Firebase section
 //import {editor} from "./ide.js"
 //const {editor} =require( './ide.js')
+
+const app ;
+const database;
+const dataRef;
+
+
+//constructor
+function firebase(){
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.1/firebase-app.js";
 import { getDatabase, ref, set, onValue } from "https://www.gstatic.com/firebasejs/9.4.1/firebase-database.js";
 // TODO: Add SDKs for Firebase products that you want to use
@@ -20,10 +28,11 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const database = getDatabase(app);
-const dataRef  = ref(database, 'User1/')
+this.app = initializeApp(firebaseConfig);
+this.database = getDatabase(app);
+this.dataRef  = ref(database, 'User1/')
 
+}
 
 //const JsCodeArea = document.getElementById("editor");
 

@@ -19,8 +19,9 @@ window.onload = function(){
 
 
 const JsCodeArea = document.getElementById("editor");
+firebase1=firebaseModule.firebase();
 
-firebaseModule.updateEditor(aceEditor)
+firebase1.updateEditor(aceEditor)
 
 //JsCodeArea.addEventListener('input', firebaseModule.Listener(editor));
 
