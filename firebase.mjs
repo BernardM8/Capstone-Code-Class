@@ -48,7 +48,8 @@ this.dataRef  = dataRef;
     //return txtarea;
   }*/
 
-  getCode(){
+
+  /*getCode(){
      //onValue(this.dataRef, UpdateCodeEditor(editor));
      return onValue(this.dataRef, (snapshot)=>{
        const data = snapshot.val().codeEditor;
@@ -57,7 +58,18 @@ this.dataRef  = dataRef;
      });
      //console.log("text = "+ text);
      //return text;
-  }
+  }*/
+
+  getCode(){
+    this.dataRef.on('value', (snapshot) => {
+      console.log(snapshot.val().codeEditor);
+      return snapshot.val().codeEditor;
+    }, (errorObject) => {
+      console.log('The read failed: ' + errorObject.name);
+    }); 
+ }
+
+
 
 
   //function listener and setter for firebase
