@@ -49,7 +49,7 @@ this.dataRef  = dataRef;
   }*/
 
 
-  updateEditor(editor){
+  getCode(){
      //onValue(this.dataRef, UpdateCodeEditor(editor));
      return Observable.create((observer) => {
      onValue(this.dataRef, (snapshot)=>{

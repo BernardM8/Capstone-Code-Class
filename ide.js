@@ -21,7 +21,7 @@ var firebase1=new Firebase();
 //firebase1.updateEditor(aceEditor)
 //editor.setValue(data);
 
-var txtarea=firebase1.getCode(aceEditor);
+var txtarea=firebase1.getCode();
 console.log("txtarea returned = "+txtarea);
 
 //aceEditor.setValue(txtarea);
