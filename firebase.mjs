@@ -2,9 +2,10 @@
 //import {editor} from "./ide.js"
 //const {editor} =require( './ide.js')
 
-const app ;
-const database;
-const dataRef;
+//Fields
+let app ;
+let database;
+let dataRef;
 
 
 //constructor
