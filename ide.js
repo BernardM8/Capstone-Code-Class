@@ -16,12 +16,12 @@ window.onload = function(){
 
 var firebase1=new Firebase(); 
 
-export default function updateEditor(data)
+/*export default function updateEditor(data)
   {
     //set value in ace editor
     aceEditor.setValue(data);
   }
-
+*/
 
 var txtarea=firebase1.getCode(aceEditor);
 console.log("txtarea returned = "+txtarea);
