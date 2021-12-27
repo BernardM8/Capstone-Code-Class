@@ -5,7 +5,7 @@ import { getDatabase, ref, set, onValue } from "https://www.gstatic.com/firebase
 export default class Firebase{
 
 //constructor
-constructor(editor){
+constructor(){
   // Firebase configuration
   const firebaseConfig = {
     apiKey: "AIzaSyDICcooHUciQZvAs_dPpExVxqBhtJMojbY",
@@ -25,8 +25,6 @@ var dataRef  = ref(database, 'User1/');
 this.app  = app;
 this.database  = database;
 this.dataRef  = dataRef;
-this.editor = editor;
-this.text = "";
 }
 
 
@@ -58,17 +56,22 @@ this.text = "";
   }*/
 
   getCode(){
-    var txt;
+    
+    var firebase=new Firebase(); 
+    this.setText = function (text) {txt = text; };
+    this.getText = function () {return txt; };
+
      onValue(this.dataRef, (snapshot)=>{
        const data = snapshot.val().codeEditor;
        console.log("data = "+ data);       
        //this.editor.setValue(data);
-       //console.log("editor = "+ this.editor); 
-       txt=data;
-       console.log("txt1 = "+  txt); 
+       //console.log("editor = "+ this.editor);
+       firebase.setText(data); 
+       //txt=data;
+       console.log("txt1 = "+  firebase.getText()); 
        //updateEditor(data);
      });
-     console.log("txt2 = "+  txt); 
+     console.log("txt2 = "+  firebase.getText()); 
      return txt;
   }
 

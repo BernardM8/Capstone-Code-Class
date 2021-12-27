@@ -14,7 +14,7 @@ window.onload = function(){
   aceEditor.session.setMode("ace/mode/c_cpp");
 }
 
-var firebase1=new Firebase(aceEditor); 
+var firebase1=new Firebase(); 
 
 /*export default function updateEditor(data)
   {
