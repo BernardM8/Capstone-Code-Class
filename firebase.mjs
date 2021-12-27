@@ -65,10 +65,10 @@ this.text = "";
        //this.editor.setValue(data);
        //console.log("editor = "+ this.editor); 
        txt=data;
-       console.log("this.text1 = "+  txt); 
+       console.log("txt1 = "+  txt); 
        //updateEditor(data);
      });
-     console.log("this.text2 = "+  txt); 
+     console.log("txt2 = "+  txt); 
      return txt;
   }
 
