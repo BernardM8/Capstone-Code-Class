@@ -22,7 +22,7 @@ constructor(){
 var app = initializeApp(firebaseConfig);
 var database = getDatabase(app);
 var dataRef  = ref(database, 'User1/');
-var txt;
+var txt = "";
 this.app  = app;
 this.database  = database;
 this.dataRef  = dataRef;
@@ -57,8 +57,8 @@ this.txt = txt;
     editor.setValue(data);
   }*/
 
-  set setText(text){this.txt = text; }
-  get getText() {return this.txt; }
+  set #setText(text){this.txt = text; }
+  get #getText() {return this.txt; }
 
   getCode(){    
     var firebase=new Firebase(); 
@@ -68,13 +68,13 @@ this.txt = txt;
        console.log("data = "+ data);       
        //this.editor.setValue(data);
        //console.log("editor = "+ this.editor);
-       firebase.setText(data); 
+       firebase.#setText(data); 
        //txt=data;
-       console.log("txt1 = "+  firebase.getText()); 
+       console.log("txt1 = "+  firebase.#getText()); 
        //updateEditor(data);
      });
-     console.log("txt2 = "+  firebase.getText()); 
-     return txt;
+     console.log("txt2 = "+  firebase.#getText()); 
+     return firebase.#getText();
   }
 
 
