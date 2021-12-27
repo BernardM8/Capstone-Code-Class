@@ -55,12 +55,12 @@ this.dataRef  = dataRef;
     editor.setValue(data);
   }*/
 
-  getCode(){
-    
-    var firebase=new Firebase(); 
-    this.setText = function (text) {txt = text; };
-    this.getText = function () {return txt; };
+  set setText(text){this.txt = text; }
+  get getText() {return txt; }
 
+  getCode(){    
+    var firebase=new Firebase(); 
+    
      onValue(this.dataRef, (snapshot)=>{
        const data = snapshot.val().codeEditor;
        console.log("data = "+ data);       
