@@ -14,7 +14,7 @@ window.onload = function(){
   aceEditor.session.setMode("ace/mode/c_cpp");
 }
 
-
+var firebase1=new Firebase(); 
 
 export default function updateEditor(data)
   {
@@ -22,7 +22,7 @@ export default function updateEditor(data)
     aceEditor.setValue(data);
   }
 
-  var firebase1=new Firebase();  
+
 var txtarea=firebase1.getCode(aceEditor);
 console.log("txtarea returned = "+txtarea);
 
