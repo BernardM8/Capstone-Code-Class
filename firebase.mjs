@@ -58,18 +58,18 @@ this.text = "";
   }*/
 
   getCode(){
-    
+    var txt;
      onValue(this.dataRef, (snapshot)=>{
        const data = snapshot.val().codeEditor;
        console.log("data = "+ data);       
        //this.editor.setValue(data);
        //console.log("editor = "+ this.editor); 
-       this.text=data;
-       console.log("this.text1 = "+  this.text); 
+       txt=data;
+       console.log("this.text1 = "+  txt); 
        //updateEditor(data);
      });
-     console.log("this.text2 = "+  this.text); 
-     return this.text;
+     console.log("this.text2 = "+  txt); 
+     return txt;
   }
 
 
