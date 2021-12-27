@@ -55,7 +55,7 @@ getCode(){
   var txt;
   dataRef.once("value")
   .then(function(snapshot) {
-    var txt = snapshot.key; // null
+    var txt = snapshot.val().codeEditor; // null
     
   });
   console.log("txt = "+  txt); 
