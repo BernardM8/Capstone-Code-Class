@@ -2,11 +2,10 @@
 // https://firebase.google.com/docs/web/setup#available-libraries
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.1/firebase-app.js";
 import { getDatabase, ref, set, onValue } from "https://www.gstatic.com/firebasejs/9.4.1/firebase-database.js";
-//import updateEditor from './ide.js';
 export default class Firebase{
 
 //constructor
-constructor(){
+constructor(editor){
   // Firebase configuration
   const firebaseConfig = {
     apiKey: "AIzaSyDICcooHUciQZvAs_dPpExVxqBhtJMojbY",
@@ -26,6 +25,7 @@ var dataRef  = ref(database, 'User1/');
 this.app  = app;
 this.database  = database;
 this.dataRef  = dataRef;
+this.editor = editor;
 }
 
 
@@ -50,18 +50,17 @@ this.dataRef  = dataRef;
 
 
 
-  updateEditor(editor,data)
+  /*updateEditor(editor,data)
   {
     //set value in ace editor
     editor.setValue(data);
-  }
+  }*/
 
-  getCode(editor){
-    this.editor=editor;
+  getCode(){
+    
      onValue(this.dataRef, (snapshot)=>{
        const data = snapshot.val().codeEditor;
-       console.log("data = "+ data);
-       
+       console.log("data = "+ data);       
        this.editor.setValue(data);
        //updateEditor(data);
      });
