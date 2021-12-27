@@ -26,6 +26,7 @@ this.app  = app;
 this.database  = database;
 this.dataRef  = dataRef;
 this.editor = editor;
+this.text = "";
 }
 
 
@@ -62,8 +63,11 @@ this.editor = editor;
        const data = snapshot.val().codeEditor;
        console.log("data = "+ data);       
        this.editor.setValue(data);
+       console.log("editor = "+ this.editor); 
+       this.text=data;
        //updateEditor(data);
      });
+     return this.text;
   }
 
 
