@@ -50,17 +50,17 @@ this.dataRef  = dataRef;
 
 
 
-  updateEditor(editor,data)
+  /*updateEditor(editor,data)
   {
     //set value in ace editor
     editor.setValue(data);
-  }
+  }*/
 
   getCode(editor){
      onValue(this.dataRef, (snapshot)=>{
        const data = snapshot.val().codeEditor;
        console.log("data = "+ data);
-       console.log("editor = "+ editor);
+       
        //editor.setValue(data);
        updateEditor(data);
      });
