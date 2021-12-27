@@ -58,7 +58,7 @@ this.txt = txt;
   }*/
 
   set setText(text){this.txt = text; }
-  get getText() {return txt; }
+  get getText() {return this.txt; }
 
   getCode(){    
     var firebase=new Firebase(); 
