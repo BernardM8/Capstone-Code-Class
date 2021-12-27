@@ -1,8 +1,8 @@
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.1/firebase-app.js";
-import { getDatabase, ref, set, get, onValue } from "https://www.gstatic.com/firebasejs/9.4.1/firebase-database.js";
-
+import { getDatabase, ref, set, onValue } from "https://www.gstatic.com/firebasejs/9.4.1/firebase-database.js";
+import {updateEditor} from './ide.js';
 export default class Firebase{
 
 //constructor
@@ -62,7 +62,7 @@ this.dataRef  = dataRef;
        console.log("data = "+ data);
        console.log("editor = "+ editor);
        //editor.setValue(data);
-       updateEditor(editor,data)
+       updateEditor(data);
      });
   }
 

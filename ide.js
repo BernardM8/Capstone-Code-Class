@@ -26,7 +26,11 @@ console.log("txtarea returned = "+txtarea);
 
 //aceEditor.setValue(txtarea);
 //JsCodeArea.addEventListener('input', firebase1.Listener(aceEditor));
-
+export default function updateEditor(data)
+  {
+    //set value in ace editor
+    aceEditor.setValue(data);
+  }
 
 //Change Languae select section
 function changeLanguage(){
