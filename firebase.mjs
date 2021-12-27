@@ -2,7 +2,7 @@
 // https://firebase.google.com/docs/web/setup#available-libraries
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.1/firebase-app.js";
 import { getDatabase, ref, set, onValue } from "https://www.gstatic.com/firebasejs/9.4.1/firebase-database.js";
-import {updateEditor} from './ide.js';
+import updateEditor from './ide.js';
 export default class Firebase{
 
 //constructor

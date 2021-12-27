@@ -15,22 +15,20 @@ window.onload = function(){
 }
 
 
-//const JsCodeArea = document.getElementById("editor");
 
-var firebase1=new Firebase();
-//firebase1.updateEditor(aceEditor)
-//editor.setValue(data);
-
-var txtarea=firebase1.getCode(aceEditor);
-console.log("txtarea returned = "+txtarea);
-
-//aceEditor.setValue(txtarea);
-//JsCodeArea.addEventListener('input', firebase1.Listener(aceEditor));
 export default function updateEditor(data)
   {
     //set value in ace editor
     aceEditor.setValue(data);
   }
+
+  var firebase1=new Firebase();  
+var txtarea=firebase1.getCode(aceEditor);
+console.log("txtarea returned = "+txtarea);
+
+//const JsCodeArea = document.getElementById("editor");
+//JsCodeArea.addEventListener('input', firebase1.Listener(aceEditor));
+
 
 //Change Languae select section
 function changeLanguage(){
