@@ -62,11 +62,13 @@ this.text = "";
      onValue(this.dataRef, (snapshot)=>{
        const data = snapshot.val().codeEditor;
        console.log("data = "+ data);       
-       this.editor.setValue(data);
-       console.log("editor = "+ this.editor); 
+       //this.editor.setValue(data);
+       //console.log("editor = "+ this.editor); 
        this.text=data;
+       console.log("this.text1 = "+  this.text); 
        //updateEditor(data);
      });
+     console.log("this.text2 = "+  this.text2); 
      return this.text;
   }
 
