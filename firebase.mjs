@@ -51,15 +51,19 @@ this.txt = txt;
 
 
 
-  /*updateEditor(editor,data)
-  {
-    //set value in ace editor
-    editor.setValue(data);
-  }*/
-
-  set setText(text){this.txt = text; }
-  get getText() {return this.txt; }
-
+getCode(){   
+  var txt;
+  dataRef.once("value")
+  .then(function(snapshot) {
+    var txt = snapshot.key; // null
+    
+  });
+  console.log("txt = "+  txt); 
+  return txt;
+}
+  //set setText(text){this.txt = text; }
+  //get getText() {return this.txt; }
+/*
   getCode(){    
     var firebase=new Firebase(); 
     
@@ -75,7 +79,7 @@ this.txt = txt;
      });
      console.log("txt2 = "+  firebase.getText()); 
      return firebase.getText();
-  }
+  }*/
 
 
   //function listener and setter for firebase
