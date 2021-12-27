@@ -68,7 +68,7 @@ this.text = "";
        console.log("this.text1 = "+  this.text); 
        //updateEditor(data);
      });
-     console.log("this.text2 = "+  this.text2); 
+     console.log("this.text2 = "+  this.text); 
      return this.text;
   }
 
