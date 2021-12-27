@@ -22,9 +22,11 @@ constructor(){
 var app = initializeApp(firebaseConfig);
 var database = getDatabase(app);
 var dataRef  = ref(database, 'User1/');
+var txt;
 this.app  = app;
 this.database  = database;
 this.dataRef  = dataRef;
+this.txt = txt;
 }
 
 
