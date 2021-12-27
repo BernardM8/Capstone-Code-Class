@@ -1,7 +1,7 @@
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.1/firebase-app.js";
-import { getDatabase, ref, set, onValue } from "https://www.gstatic.com/firebasejs/9.4.1/firebase-database.js";
+import { getDatabase, ref, set, get, onValue } from "https://www.gstatic.com/firebasejs/9.4.1/firebase-database.js";
 export default class Firebase{
 
 //constructor
@@ -53,12 +53,17 @@ this.txt = txt;
 
 getCode(){   
   var txt;
-  dataRef.once("value")
-  .then(function(snapshot) {
-    var txt = snapshot.val().codeEditor; // null
-    
+  get(child(this.dataRef)).then((snapshot) => {
+    if (snapshot.exists()) {
+      txt = snapshot.val().codeEditor;
+      console.log("txt1 = "+ txt);
+    } else {
+      console.log("No data available");
+    }
+  }).catch((error) => {
+    console.error(error);
   });
-  console.log("txt = "+  txt); 
+  console.log("txt2 = "+  txt); 
   return txt;
 }
   //set setText(text){this.txt = text; }
