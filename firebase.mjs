@@ -52,11 +52,14 @@ this.txt = txt;
 
 
 getCode(){ 
-  var txt;  
-  once(this.dataRef, (snapshot)=>{
-    txt = snapshot.val().codeEditor;
-    console.log("txt1 = "+ txt);
-
+  var txt;        
+    return onValue(this.dataRef, (snapshot)=>{
+      txt = snapshot.val().codeEditor;
+      console.log("txt1 = "+ txt);
+    }, {
+      onlyOnce: true
+    });
+    console.log("txt2 = "+ txt);
   /*var txt;
   get(child(this.dataRef)).then((snapshot) => {
     if (snapshot.exists()) {
@@ -66,10 +69,10 @@ getCode(){
       console.log("No data available");
     }
   }).catch((error) => {
-    console.error(error);*/
+    console.error(error);
   });
   console.log("txt2 = "+  txt); 
-  return txt;
+  return txt;*/
 }
   //set setText(text){this.txt = text; }
   //get getText() {return this.txt; }
