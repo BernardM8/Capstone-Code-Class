@@ -6,7 +6,7 @@ import Firebase from './firebase.mjs';
 
 //// Create ACE
 window.onload = function(){
-  const aceEditor = ace.edit("editor");
+  const aceEditor = ace.edit("editor"); //Global
   aceEditor.setTheme("ace/theme/monokai");
   session = aceEditor.getSession();
   //session.setUseWrapMode(true);
