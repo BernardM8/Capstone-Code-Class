@@ -18,7 +18,7 @@ window.onload = function(){
 var firebase1=new Firebase(); 
 var txtarea=firebase1.getCode();
 console.log("txtarea returned = "+txtarea.value);
-//this.aceEditor.setValue(txtarea); //set value in ace editor
+aceEditor.setValue(txtarea); //set value in ace editor
 
 //const JsCodeArea = document.getElementById("editor");
 //JsCodeArea.addEventListener('input', firebase1.Listener(aceEditor));

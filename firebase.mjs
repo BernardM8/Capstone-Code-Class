@@ -53,9 +53,10 @@ this.txt = txt;
 
 getCode(){ 
   //const txt;        
-    return onValue(this.dataRef, (snapshot)=>{
+    onValue(this.dataRef, (snapshot)=>{
       const txt = snapshot.val().codeEditor;
       console.log("txt1 = "+ txt);
+      return txt;
     }, {
       onlyOnce: true
     });
