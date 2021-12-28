@@ -1,7 +1,7 @@
 import Firebase from './firebase.mjs';
 
-var aceEditor
-var session
+const aceEditor;
+var session;
 
 
 //// Create ACE
@@ -12,7 +12,7 @@ window.onload = function(){
   //session.setUseWrapMode(true);
   //session.setUseWorker(false);
   aceEditor.session.setMode("ace/mode/c_cpp");
-  this.aceEditor=aceEditor;
+  //this.aceEditor=aceEditor;
 }
 
 var firebase1=new Firebase(); 
