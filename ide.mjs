@@ -40,11 +40,12 @@ JsCodeArea.addEventListener('input', listenSetFirebase);
 //function getter from firbase and setter into ace editor
 function updateEditor(data)
 		{
-			var txteditor = document.getElementById('editor');
+			//var txteditor = document.getElementById('editor');
       var txtarea = data.val().codeEditor;
       //if (txtarea == null||undefined){txtarea="";}
       console.log("txtarea = "+txtarea);
-      console.log("txteditor.value = "+txteditor.value);
+      //console.log("txteditor.value = "+txteditor.value);
+      console.log("JsCodeArea = "+JsCodeArea.value);
       aceEditor.setValue(txtarea); //set value in ace editor
 		}
 
