@@ -51,7 +51,7 @@ function updateEditor(data)
 //function getter from ace editor and setter for firebase
 function listenSetFirebase() 
 { 
-  var CodeArea=aceEditor.session().getValue();
+  var CodeArea=aceEditor.getSession().getValue();
   console.log("Listener = "+CodeArea);
   var jsedit = 
   {
