@@ -34,16 +34,17 @@ const JsCodeArea = document.getElementById("editor");
 
 onValue(dataRef, updateEditor);
 JsCodeArea.addEventListener('input', listenSetFirebase);
-//onValue(dataRef, updateData);
+
 
 
 //function getter from firbase and setter into ace editor
 function updateEditor(data)
 		{
-			//var txtarea = document.getElementById('editor');
+			var txteditor = document.getElementById('editor');
       var txtarea = data.val().codeEditor;
       //if (txtarea == null||undefined){txtarea="";}
-      console.log("txtarea"+txtarea);
+      console.log("txtarea = "+txtarea);
+      console.log("txteditor = "+txteditor);
       aceEditor.setValue(txtarea); //set value in ace editor
 		}
 
