@@ -32,7 +32,7 @@ const JsCodeArea = document.getElementById("editor");
 //}
 
 
-//Change Languae select section
+//Change Language select section
 function changeLanguage(){
   let language = $("#languages").val();
   if(language == 'c++' )aceEditor.session.setMode("ace/mode/c_cpp");
@@ -56,7 +56,7 @@ function updateEditor(data)
       aceEditor.getSession().setValue(txtarea, 1); //set value in ace editor
       //aceEditor.clearSelection();
       //aceEditor.navigateLineEnd();
-      //ISSUE HERE
+      //ISSUE HERE https://stackoverflow.com/questions/27625028/how-to-move-the-cursor-to-the-end-of-the-line-in-ace-editor
       aceEditor.gotoLine(row + 1, column)
 		}
 
