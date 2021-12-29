@@ -18,7 +18,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 const dataRef  = ref(database, 'User1/');
-
+const JsCodeArea = document.getElementById("editor");
 
 
 //// Create ACE
@@ -32,10 +32,10 @@ const dataRef  = ref(database, 'User1/');
 //}
 
 
-const JsCodeArea = document.getElementById("editor");
+
 JsCodeArea.addEventListener('input', Listener);
 onValue(dataRef, BroadCastData);
-//JsCodeArea.addEventListener('input', Listener);
+
 
 //function for getter and set value in ace editor
 function BroadCastData(data)
