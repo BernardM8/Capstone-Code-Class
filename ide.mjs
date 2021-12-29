@@ -42,11 +42,11 @@ function updateEditor(data)
 		{
 			//var txteditor = document.getElementById('editor');
       var txtarea = data.val().codeEditor;
-      //if (txtarea == null||undefined){txtarea="";}
       console.log("txtarea = "+txtarea);
       //console.log("txteditor.value = "+txteditor.value);
       console.log("JsCodeArea = "+JsCodeArea.value);
-      aceEditor.setValue(txtarea); //set value in ace editor
+      aceEditor.session.setValue(txtarea); //set value in ace editor
+      //ISSUE HERE
 		}
 
 
