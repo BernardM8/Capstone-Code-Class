@@ -44,7 +44,7 @@ function updateEditor(data)
       var txtarea = data.val().codeEditor;
       //if (txtarea == null||undefined){txtarea="";}
       console.log("txtarea = "+txtarea);
-      console.log("txteditor = "+txteditor);
+      console.log("txteditor.value = "+txteditor.value);
       aceEditor.setValue(txtarea); //set value in ace editor
 		}
 
