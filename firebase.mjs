@@ -52,9 +52,9 @@ this.txt = txt;
 
 
 getCode(){ 
-  //const txt;        
+  var txt="";        
     onValue(this.dataRef, (snapshot)=>{
-      const txt = snapshot.val().codeEditor;
+      txt = snapshot.val().codeEditor;
       console.log("txt1 = "+ txt);
       return txt;
     }, {

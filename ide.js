@@ -5,15 +5,15 @@ import Firebase from './firebase.mjs';
 
 
 //// Create ACE
-window.onload = function(){
-  aceEditor = ace.edit("editor"); //Global
+//window.onload = function(){
+  var aceEditor = ace.edit("editor"); //Global
   aceEditor.setTheme("ace/theme/monokai");
-  session = aceEditor.getSession();
+  var session = aceEditor.getSession();
   //session.setUseWrapMode(true);
   //session.setUseWorker(false);
   aceEditor.session.setMode("ace/mode/c_cpp");
   //this.aceEditor=aceEditor;
-}
+//}
 
 var firebase1=new Firebase(); 
 var txtarea=firebase1.getCode();
