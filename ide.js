@@ -40,7 +40,8 @@ function BroadCastData(data)
 		{
 			//var txtarea = document.getElementById('editor');
 			var txtarea = data.val().userEdit;
-      console.log("txtarea returned = "+txtarea);
+      if (txtarea == null||undefined){txtarea="";}
+      console.log("txtarea"+txtarea);
       aceEditor.setValue(txtarea); //set value in ace editor
 		}
 
