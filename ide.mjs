@@ -48,13 +48,15 @@ JsCodeArea.addEventListener('input', listenSetFirebase);
 //function getter from firbase and setter into ace editor
 function updateEditor(data)
 		{
-			//var txteditor = document.getElementById('editor');
+			var row = aceEditor.session.getLength() - 1
+      var column = aceEditor.session.getLine(row).length // or simply Infinity
       var txtarea = data.val().codeEditor;
       console.log("txtarea = "+txtarea);
       aceEditor.getSession().setValue(txtarea, 1); //set value in ace editor
       //aceEditor.clearSelection();
-      aceEditor.navigateLineEnd();
+      //aceEditor.navigateLineEnd();
       //ISSUE HERE
+      aceEditor.gotoLine(row + 1, column)
 		}
 
 
