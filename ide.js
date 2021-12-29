@@ -55,9 +55,6 @@ function Listener()
 }
 
 
-console.log("txtarea returned = "+txtarea);
-aceEditor.setValue(txtarea); //set value in ace editor
-
 //const JsCodeArea = document.getElementById("editor");
 onValue(dataRef, BroadCastData);
 JsCodeArea.addEventListener('input', Listener);
