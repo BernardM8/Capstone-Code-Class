@@ -43,6 +43,7 @@ function updateEditor(data)
       var txtarea = data.val().codeEditor;
       console.log("txtarea = "+txtarea);
       aceEditor.session.setValue(txtarea, 1); //set value in ace editor
+      aceEditor.session.clearSelection();
       //ISSUE HERE
 		}
 
@@ -50,7 +51,7 @@ function updateEditor(data)
 //function getter from ace editor and setter for firebase
 function listenSetFirebase() 
 { 
-  var CodeArea=aceEditor.getSession().getValue();
+  var CodeArea=aceEditor.session().getValue();
   console.log("Listener = "+CodeArea);
   var jsedit = 
   {
