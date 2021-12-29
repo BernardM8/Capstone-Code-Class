@@ -32,6 +32,15 @@ const JsCodeArea = document.getElementById("editor");
 //}
 
 
+//Change Languae select section
+function changeLanguage(){
+  let language = $("#languages").val();
+  if(language == 'java' )aceEditor.session.setMode("lib/ace/mode/java");
+  else if(language == 'python' )aceEditor.session.setMode("lib/ace/mode/python");
+  else if(language == 'node' )aceEditor.session.setMode("lib/ace/mode/javascript");
+}
+
+
 onValue(dataRef, updateEditor);
 JsCodeArea.addEventListener('input', listenSetFirebase);
 
@@ -42,8 +51,8 @@ function updateEditor(data)
 			//var txteditor = document.getElementById('editor');
       var txtarea = data.val().codeEditor;
       console.log("txtarea = "+txtarea);
-      aceEditor.session.setValue(txtarea, 1); //set value in ace editor
-      aceEditor.clearSelection();
+      aceEditor.getSession().setValue(txtarea, 1); //set value in ace editor
+      //aceEditor.clearSelection();
       //ISSUE HERE
 		}
 
@@ -60,14 +69,6 @@ function listenSetFirebase()
   set(dataRef, jsedit);
 }
 
-
-//Change Languae select section
-function changeLanguage(){
-  let language = $("#languages").val();
-  if(language == 'java' )aceEditor.session.setMode("lib/ace/mode/java");
-  else if(language == 'python' )aceEditor.session.setMode("lib/ace/mode/python");
-  else if(language == 'node' )aceEditor.session.setMode("lib/ace/mode/javascript");
-}
 
 
 // Run button to compile code       
