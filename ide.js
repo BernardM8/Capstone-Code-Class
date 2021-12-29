@@ -55,7 +55,7 @@ function Listener()
 }
 
 
-//const JsCodeArea = document.getElementById("editor");
+const JsCodeArea = document.getElementById("editor");
 onValue(dataRef, BroadCastData);
 JsCodeArea.addEventListener('input', Listener);
 
