@@ -38,10 +38,10 @@ JsCodeArea.addEventListener('input', Listener);
 //function for getter and set value in ace editor
 function BroadCastData(data)
 		{
-			var txtarea = document.getElementById('editor');
-			txtarea.value = data.val().userEdit;
-      console.log("txtarea returned = "+txtarea.value);
-      aceEditor.setValue(txtarea.value); //set value in ace editor
+			//var txtarea = document.getElementById('editor');
+			var txtarea = data.val().userEdit;
+      console.log("txtarea returned = "+txtarea);
+      aceEditor.setValue(txtarea); //set value in ace editor
 		}
 
 
