@@ -31,6 +31,10 @@ var txt = "";
   aceEditor.session.setMode("ace/mode/c_cpp");
 //}
 
+const JsCodeArea = document.getElementById("editor");
+onValue(dataRef, BroadCastData);
+JsCodeArea.addEventListener('input', Listener);
+
 //function for getter and set value in ace editor
 function BroadCastData(data)
 		{
@@ -53,11 +57,6 @@ function Listener()
   };
   set(dataRef, jsedit);
 }
-
-
-const JsCodeArea = document.getElementById("editor");
-onValue(dataRef, BroadCastData);
-JsCodeArea.addEventListener('input', Listener);
 
 
 //Change Languae select section
