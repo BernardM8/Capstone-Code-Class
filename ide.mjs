@@ -15,17 +15,17 @@ const firebaseConfig = {
   measurementId: "G-4XTVC35JQL"
 };
 // Initialize Firebase
-var app = initializeApp(firebaseConfig);
-var database = getDatabase(app);
-var dataRef  = ref(database, 'User1/');
-var txt = "";
+const app = initializeApp(firebaseConfig);
+const database = getDatabase(app);
+const dataRef  = ref(database, 'User1/');
+
 
 
 //// Create ACE
 //window.onload = function(){
-  var aceEditor = ace.edit("editor"); //Global
+  const aceEditor = ace.edit("editor"); //Global
   aceEditor.setTheme("ace/theme/monokai");
-  var session = aceEditor.getSession();
+  const session = aceEditor.getSession();
   //session.setUseWrapMode(true);
   //session.setUseWorker(false);
   aceEditor.session.setMode("ace/mode/c_cpp");
