@@ -32,7 +32,7 @@ const JsCodeArea = document.getElementById("editor");
 //}
 
 
-onValue(dataRef, updateEditor);
+//onValue(dataRef, updateEditor);
 JsCodeArea.addEventListener('input', listenSetFirebase);
 
 
