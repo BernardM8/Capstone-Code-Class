@@ -32,13 +32,13 @@ const JsCodeArea = document.getElementById("editor");
 //}
 
 
-onValue(dataRef, updateData);
+onValue(dataRef, updateEditor);
 JsCodeArea.addEventListener('input', listenSetFirebase);
 //onValue(dataRef, updateData);
 
 
 //function getter from firbase and setter into ace editor
-function updateData(data)
+function updateEditor(data)
 		{
 			//var txtarea = document.getElementById('editor');
 			var txtarea = data.val().userEdit;
