@@ -32,13 +32,13 @@ const JsCodeArea = document.getElementById("editor");
 //}
 
 
+onValue(dataRef, updateData);
+JsCodeArea.addEventListener('input', listenSetFirebase);
+//onValue(dataRef, updateData);
 
-JsCodeArea.addEventListener('input', Listener);
-onValue(dataRef, BroadCastData);
 
-
-//function for getter and set value in ace editor
-function BroadCastData(data)
+//function getter from firbase and setter into ace editor
+function updateData(data)
 		{
 			//var txtarea = document.getElementById('editor');
 			var txtarea = data.val().userEdit;
@@ -48,8 +48,8 @@ function BroadCastData(data)
 		}
 
 
-//function listener and setter for firebase
-function Listener() 
+//function getter from ace editor and setter for firebase
+function listenSetFirebase() 
 { 
   var CodeArea=aceEditor.getSession().getValue();
   console.log("Listener = "+CodeArea);
