@@ -36,6 +36,8 @@ function BroadCastData(data)
 		{
 			var txtarea = document.getElementById('editor');
 			txtarea.value = data.val().userEdit;
+      console.log("txtarea returned = "+txtarea.value);
+      aceEditor.setValue(txtarea.value); //set value in ace editor
 		}
 
 
