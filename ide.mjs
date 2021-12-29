@@ -14,7 +14,7 @@ const firebaseConfig = {
   appId: "1:573387563239:web:161f23412c218ba50ac242",
   measurementId: "G-4XTVC35JQL"
 };
-// Initialize Firebase
+// Initialize Firebase Globals
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 const dataRef  = ref(database, 'User1/');
@@ -23,7 +23,7 @@ const JsCodeArea = document.getElementById("editor");
 
 //// Create ACE
 //window.onload = function(){
-  const aceEditor = ace.edit("editor"); //Global
+  const aceEditor = ace.edit("editor"); 
   aceEditor.setTheme("ace/theme/monokai");
   const session = aceEditor.getSession();
   //session.setUseWrapMode(true);
@@ -35,7 +35,8 @@ const JsCodeArea = document.getElementById("editor");
 //Change Languae select section
 function changeLanguage(){
   let language = $("#languages").val();
-  if(language == 'java' )aceEditor.session.setMode("lib/ace/mode/java");
+  if(language == 'c++' )aceEditor.session.setMode("ace/mode/c_cpp");
+  else if(language == 'java' )aceEditor.session.setMode("lib/ace/mode/java");
   else if(language == 'python' )aceEditor.session.setMode("lib/ace/mode/python");
   else if(language == 'node' )aceEditor.session.setMode("lib/ace/mode/javascript");
 }
