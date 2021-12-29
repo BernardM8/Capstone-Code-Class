@@ -53,7 +53,7 @@ this.txt = txt;
 
 getCode(){ 
   var txt="";        
-    txt = onValue(this.dataRef, (snapshot)=>{
+    txt = onValue(this.dataRef, (snapshot)=>{//listener function can't return value from event listener
       txt = snapshot.val().codeEditor;
       console.log("txt1 = "+ txt);
       return txt;

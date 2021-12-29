@@ -1,7 +1,24 @@
-import Firebase from './firebase.mjs';
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.1/firebase-app.js";
+import { getDatabase, ref, set, get, onValue } from "https://www.gstatic.com/firebasejs/9.4.1/firebase-database.js";
 
-//const aceEditor;
-//var session;
+// Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyDICcooHUciQZvAs_dPpExVxqBhtJMojbY",
+  authDomain: "codelab-database-1.firebaseapp.com",
+  databaseURL: "https://codelab-database-1-default-rtdb.firebaseio.com",
+  projectId: "codelab-database-1",
+  storageBucket: "codelab-database-1.appspot.com",
+  messagingSenderId: "573387563239",
+  appId: "1:573387563239:web:161f23412c218ba50ac242",
+  measurementId: "G-4XTVC35JQL"
+};
+// Initialize Firebase
+var app = initializeApp(firebaseConfig);
+var database = getDatabase(app);
+var dataRef  = ref(database, 'User1/');
+var txt = "";
 
 
 //// Create ACE
@@ -12,16 +29,36 @@ import Firebase from './firebase.mjs';
   //session.setUseWrapMode(true);
   //session.setUseWorker(false);
   aceEditor.session.setMode("ace/mode/c_cpp");
-  //this.aceEditor=aceEditor;
 //}
 
-var firebase1=new Firebase(); 
-var txtarea=firebase1.getCode();
-console.log("txtarea returned = "+txtarea.value);
+//function for getter and set value in ace editor
+function BroadCastData(data)
+		{
+			var txtarea = document.getElementById('editor');
+			txtarea.value = data.val().userEdit;
+		}
+
+
+//function listener and setter for firebase
+function Listener() 
+{ 
+  var CodeArea=aceEditor.getSession().getValue();
+  console.log("Listener = "+CodeArea);
+  var jsedit = 
+  {
+    //codeEditor : JsCodeArea.value
+    codeEditor : CodeArea
+  };
+  set(dataRef, jsedit);
+}
+
+
+console.log("txtarea returned = "+txtarea);
 aceEditor.setValue(txtarea); //set value in ace editor
 
 //const JsCodeArea = document.getElementById("editor");
-//JsCodeArea.addEventListener('input', firebase1.Listener(aceEditor));
+onValue(dataRef, BroadCastData);
+JsCodeArea.addEventListener('input', Listener);
 
 
 //Change Languae select section
