@@ -36,16 +36,13 @@ onValue(dataRef, updateEditor);
 JsCodeArea.addEventListener('input', listenSetFirebase);
 
 
-
 //function getter from firbase and setter into ace editor
 function updateEditor(data)
 		{
 			//var txteditor = document.getElementById('editor');
       var txtarea = data.val().codeEditor;
       console.log("txtarea = "+txtarea);
-      //console.log("txteditor.value = "+txteditor.value);
-      console.log("JsCodeArea = "+JsCodeArea.value);
-      aceEditor.session.setValue(txtarea); //set value in ace editor
+      aceEditor.session.setValue(txtarea,1); //set value in ace editor
       //ISSUE HERE
 		}
 
@@ -57,7 +54,6 @@ function listenSetFirebase()
   console.log("Listener = "+CodeArea);
   var jsedit = 
   {
-    //codeEditor : JsCodeArea.value
     codeEditor : CodeArea
   };
   set(dataRef, jsedit);
