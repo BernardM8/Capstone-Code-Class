@@ -61,6 +61,8 @@ getCode(){
       onlyOnce: true
     });
     console.log("txt2 = "+ txt);
+    return txt;
+  }
   /*var txt;
   get(child(this.dataRef)).then((snapshot) => {
     if (snapshot.exists()) {
@@ -74,10 +76,11 @@ getCode(){
   });
   console.log("txt2 = "+  txt); 
   return txt;*/
-}
+
   //set setText(text){this.txt = text; }
   //get getText() {return this.txt; }
 /*
+
   getCode(){    
     var firebase=new Firebase(); 
     
