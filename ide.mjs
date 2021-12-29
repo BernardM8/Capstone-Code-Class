@@ -53,6 +53,7 @@ function updateEditor(data)
       console.log("txtarea = "+txtarea);
       aceEditor.getSession().setValue(txtarea, 1); //set value in ace editor
       //aceEditor.clearSelection();
+      aceEditor.navigateLineEnd();
       //ISSUE HERE
 		}
 
