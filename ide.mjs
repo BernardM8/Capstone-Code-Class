@@ -33,7 +33,7 @@ const JsCodeArea = document.getElementById("editor");
 
 
 //Change Language select section
-function changeLanguage(){
+export function changeLanguage(){
   let language = $("#languages").val();
   if(language == 'c++' )aceEditor.session.setMode("ace/mode/c_cpp");
   else if(language == 'java' )aceEditor.session.setMode("lib/ace/mode/java");
