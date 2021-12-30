@@ -22,18 +22,18 @@ const JsCodeArea = document.getElementById("editor");
 
 
 //// Create ACE
-window.onload = function(){
+//window.onload = function(){
   const aceEditor = ace.edit("editor"); 
   aceEditor.setTheme("ace/theme/monokai");
   const session = aceEditor.getSession();
   //session.setUseWrapMode(true);
   //session.setUseWorker(false);
   aceEditor.session.setMode("ace/mode/c_cpp");
-}
+//}
 
 
 //Change Language select section
-window.showchangeLanguage = function changeLanguage(){
+window.changeLanguage = function changeLanguage(){
   let language = $("#languages").val();
   if(language == 'c++' )aceEditor.session.setMode("ace/mode/c_cpp");
   else if(language == 'java' )aceEditor.session.setMode("lib/ace/mode/java");
