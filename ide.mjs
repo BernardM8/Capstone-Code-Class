@@ -28,7 +28,8 @@ const JsCodeArea = document.getElementById("editor");
   const session = aceEditor.getSession();
   //session.setUseWrapMode(true);
   //session.setUseWorker(false);
-  aceEditor.session.setMode("ace/mode/c_cpp");
+  //aceEditor.session.setMode("ace/mode/c_cpp");
+  changeLanguage();
 //}
 
 
@@ -78,6 +79,8 @@ function updateEditor(data)
 //function getter from ace editor and setter for firebase
 function listenSetFirebase() 
 { 
+  var row = aceEditor.session.getLength() - 1
+  var column = aceEditor.session.getLine(row).length
   var CodeArea=aceEditor.getSession().getValue();
   console.log("Listener = "+CodeArea);
   var jsedit = 
@@ -85,6 +88,7 @@ function listenSetFirebase()
     codeEditor : CodeArea
   };
   set(dataRef, jsedit);
+  aceEditor.gotoLine(row + 1, column)
 }
 
 
