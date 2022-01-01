@@ -43,15 +43,15 @@ window.changeLanguage = function changeLanguage(){
     console.log("check Ace editor scope = " + aceEditor);
   }
   else if(language == 'java' ){
-    aceEditor.session.setMode("lib/ace/mode/java");
+    aceEditor.session.setMode("ace/mode/java");
     console.log("check Ace editor scope = " + aceEditor);
   }
   else if(language == 'python' ){
-    aceEditor.session.setMode("lib/ace/mode/python");
+    aceEditor.session.setMode("ace/mode/python");
     console.log("check Ace editor scope = " + aceEditor);
   }
   else if(language == 'node' ){
-    aceEditor.session.setMode("lib/ace/mode/javascript");
+    aceEditor.session.setMode("ace/mode/javascript");
     console.log("check Ace editor scope = " + aceEditor);
   }
 }
