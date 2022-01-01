@@ -58,7 +58,7 @@ window.changeLanguage = function changeLanguage(){
 
 changeLanguage();
 onValue(dataRef, updateEditor);
-JsCodeArea.addEventListener('input', listenSetFirebase);
+JsCodeArea.addEventListener('keydown', listenSetFirebase);
 
 
 //function getter from firbase and setter into ace editor
@@ -79,8 +79,6 @@ function updateEditor(data)
 //function getter from ace editor and setter for firebase
 function listenSetFirebase() 
 { 
-  var row = aceEditor.session.getLength() - 1
-  var column = aceEditor.session.getLine(row).length
   var CodeArea=aceEditor.getSession().getValue();
   console.log("Listener = "+CodeArea);
   var jsedit = 
@@ -88,7 +86,6 @@ function listenSetFirebase()
     codeEditor : CodeArea
   };
   set(dataRef, jsedit);
-  aceEditor.gotoLine(row + 1, column)
 }
 
 
