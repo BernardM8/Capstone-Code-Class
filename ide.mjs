@@ -94,7 +94,8 @@ window.executeCode = function executeCode(){
   
   //var CodeArea= document.getElementById("editor").value;
   var CodeArea=aceEditor.getSession().getValue();
-  console.log(CodeArea);
+  console.log("Output =" +CodeArea);
+  document.getElementById("languages").innerHTML = CodeArea
   //console.log(CodeArea.childNodes[0]);
   //Sockets
   /*var socket = io('http://localhost');
