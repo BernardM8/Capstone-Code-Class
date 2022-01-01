@@ -36,11 +36,23 @@ const JsCodeArea = document.getElementById("editor");
 window.changeLanguage = function changeLanguage(){
   let language = $("#languages").val();
   console.log("language = " + language)
-  console.log("check Ace editor scope = " + aceEditor)
-  if(language == 'c++' )aceEditor.session.setMode("ace/mode/c_cpp");
-  else if(language == 'java' )aceEditor.session.setMode("lib/ace/mode/java");
-  else if(language == 'python' )aceEditor.session.setMode("lib/ace/mode/python");
-  else if(language == 'node' )aceEditor.session.setMode("lib/ace/mode/javascript");
+  
+  if(language == 'c++' ){
+    aceEditor.session.setMode("ace/mode/c_cpp");
+    console.log("check Ace editor scope = " + aceEditor);
+  }
+  else if(language == 'java' ){
+    aceEditor.session.setMode("lib/ace/mode/java");
+    console.log("check Ace editor scope = " + aceEditor);
+  }
+  else if(language == 'python' ){
+    aceEditor.session.setMode("lib/ace/mode/python");
+    console.log("check Ace editor scope = " + aceEditor);
+  }
+  else if(language == 'node' ){
+    aceEditor.session.setMode("lib/ace/mode/javascript");
+    console.log("check Ace editor scope = " + aceEditor);
+  }
 }
 
 
@@ -78,7 +90,7 @@ function listenSetFirebase()
 
 
 // Run button to compile code       
-function executeCode(){
+window.executeCode = function executeCode(){
   
   //var CodeArea= document.getElementById("editor").value;
   var CodeArea=aceEditor.getSession().getValue();
