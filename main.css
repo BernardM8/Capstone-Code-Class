@@ -26,8 +26,8 @@
 }
 
 #editor {
-    /*display:inline-block;*/
-    float: left;
+    display:inline-block;
+    /*float: left;*/
     height: 600px; 
     text-align: left;
     border: 6px solid gray;
@@ -37,8 +37,8 @@
 
 
 #editor2 {
-    /*display:inline-block;*/
-    float: right;
+    display:inline-block;
+    /*float: right;*/
     /*overflow-y: scroll;*/
     height: 600px; 
     text-align: right;
@@ -63,7 +63,6 @@
 .output{
     background: hsla(0, 0%, 0%, 0.815);
     color: aliceblue;
-    float: bottom;
     padding: 4px;
     border: 6px solid gray;
     min-height: 200px;

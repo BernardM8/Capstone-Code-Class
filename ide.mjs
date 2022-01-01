@@ -50,9 +50,9 @@ JsCodeArea.addEventListener('keydown', listenSetFirebase);
 function updateEditor(data)
 		{
 			//var row = aceEditor.session.getLength() - 1;
-      var row = aceEditor.session.cursorPosition.row;
+      var row = aceEditor.session.cursor.row;
       //var column = aceEditor.session.getLine(row).length; 
-      var column = aceEditor.session.cursorPosition.column; 
+      var column = aceEditor.session.cursor.column; 
       var txtarea = data.val().codeEditor;
       console.log("txtarea = "+txtarea);
       aceEditor.getSession().setValue(txtarea, 1); //set value in ace editor
