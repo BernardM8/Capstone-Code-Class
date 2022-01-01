@@ -35,6 +35,8 @@ const JsCodeArea = document.getElementById("editor");
 //Change Language select section
 window.changeLanguage = function changeLanguage(){
   let language = $("#languages").val();
+  console.log("language = " + language)
+  console.log("check Ace editor scope = " + aceEditor)
   if(language == 'c++' )aceEditor.session.setMode("ace/mode/c_cpp");
   else if(language == 'java' )aceEditor.session.setMode("lib/ace/mode/java");
   else if(language == 'python' )aceEditor.session.setMode("lib/ace/mode/python");
