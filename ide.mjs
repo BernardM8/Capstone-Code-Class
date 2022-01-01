@@ -49,15 +49,17 @@ JsCodeArea.addEventListener('keydown', listenSetFirebase);
 //function getter from firbase and setter into ace editor
 function updateEditor(data)
 		{
-			var row = aceEditor.session.getLength() - 1
-      var column = aceEditor.session.getLine(row).length // or simply Infinity
+			//var row = aceEditor.session.getLength() - 1;
+      var row = aceEditor.session.cursorPosition.row;
+      //var column = aceEditor.session.getLine(row).length; 
+      var column = aceEditor.session.cursorPosition.column; 
       var txtarea = data.val().codeEditor;
       console.log("txtarea = "+txtarea);
       aceEditor.getSession().setValue(txtarea, 1); //set value in ace editor
       //aceEditor.clearSelection();
       //aceEditor.navigateLineEnd();
       //ISSUE HERE https://stackoverflow.com/questions/27625028/how-to-move-the-cursor-to-the-end-of-the-line-in-ace-editor
-      aceEditor.gotoLine(row + 1, column)
+      aceEditor.gotoLine(row + 1, column);
 		}
 
 
