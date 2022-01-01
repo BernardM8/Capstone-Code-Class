@@ -36,7 +36,8 @@
 
 
 #editor2 {
-    display:inline-block;
+    /*display:inline-block;*/
+    float: right;
     /*overflow-y: scroll;*/
     height: 600px; 
     text-align: right;
