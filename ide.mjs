@@ -51,6 +51,7 @@ function updateEditor(data)
 		{
 			//var row = aceEditor.session.getLength() - 1;
       var cursorPosition = aceEditor.getCursorPosition();
+      console.log("cursor position"+cursorPosition);
       //var column = aceEditor.session.getLine(row).length; 
       var txtarea = data.val().codeEditor;
       console.log("txtarea = "+txtarea);
@@ -59,7 +60,7 @@ function updateEditor(data)
       //aceEditor.navigateLineEnd();
       //ISSUE HERE https://stackoverflow.com/questions/27625028/how-to-move-the-cursor-to-the-end-of-the-line-in-ace-editor
       //aceEditor.gotoLine(row + 1, column);
-      aceEditor.gotoLine(cursorPosition);
+      aceEditor.session.insert(cursorPosition,"");
 		}
 
 
