@@ -29,7 +29,7 @@ const JsCodeArea = document.getElementById("editor");
   //session.setUseWrapMode(true);
   //session.setUseWorker(false);
   //aceEditor.session.setMode("ace/mode/c_cpp");
-  changeLanguage();
+  //changeLanguage();
 //}
 
 
@@ -56,7 +56,7 @@ window.changeLanguage = function changeLanguage(){
   }
 }
 
-
+changeLanguage();
 onValue(dataRef, updateEditor);
 JsCodeArea.addEventListener('input', listenSetFirebase);
 
