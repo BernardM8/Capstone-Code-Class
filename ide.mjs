@@ -14,22 +14,29 @@ const firebaseConfig = {
   appId: "1:573387563239:web:161f23412c218ba50ac242",
   measurementId: "G-4XTVC35JQL"
 };
-// Initialize Firebase Globals
+
+// Initialize Firebase editor
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 const dataRef  = ref(database, 'User1/');
 const JsCodeArea = document.getElementById("editor");
 
+// Initialize Firebase editor2
+const JsCodeArea2 = document.getElementById("editor2");
 
-//// Create ACE
+//// Create ACE editor
 //window.onload = function(){
   const aceEditor = ace.edit("editor"); 
   aceEditor.setTheme("ace/theme/monokai");
   const session = aceEditor.getSession();
   //session.setUseWrapMode(true);
   //session.setUseWorker(false);
-  //aceEditor.session.setMode("ace/mode/c_cpp");
 //}
+
+const aceEditor2 = ace.edit("editor2"); 
+aceEditor2.setTheme("ace/theme/monokai");
+const session2 = aceEditor.getSession();
+aceEditor2.session.setMode("ace/mode/c_cpp");
 
 
 //Change Language select section
