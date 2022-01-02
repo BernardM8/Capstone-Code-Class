@@ -28,7 +28,7 @@
 #editor {
     display:inline-block;
     /*float: left;*/
-    height: 500px; 
+    height: 400px; 
     text-align: left;
     border: 6px solid gray;
     font-size: 16px;
@@ -40,9 +40,9 @@
     display:inline-block;
     /*float: right;*/
     /*overflow-y: scroll;*/
-    height: 500px; 
+    height: 400px; 
     text-align: right;
-    border: 14px solid gray;
+    border: 11px solid gray;
     font-size: 14px;
     width: 550px;
     margin-left: 75px;
@@ -65,7 +65,7 @@
     color: aliceblue;
     padding: 4px;
     border: 6px solid gray;
-    min-height: 200px;
+    min-height: 150px;
     width: 642px;
     resize: none;
 }

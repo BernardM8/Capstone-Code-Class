@@ -24,7 +24,7 @@ const JsCodeArea = document.getElementById("editor");
 // Initialize Firebase editor2
 const JsCodeArea2 = document.getElementById("editor2");
 
-//// Create ACE editor
+// Create ACE editor
 //window.onload = function(){
   const aceEditor = ace.edit("editor"); 
   aceEditor.setTheme("ace/theme/monokai");
@@ -33,6 +33,7 @@ const JsCodeArea2 = document.getElementById("editor2");
   //session.setUseWorker(false);
 //}
 
+// Create ACE editor 2
 const aceEditor2 = ace.edit("editor2"); 
 aceEditor2.setTheme("ace/theme/monokai");
 const session2 = aceEditor.getSession();
