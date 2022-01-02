@@ -50,9 +50,8 @@ JsCodeArea.addEventListener('keydown', listenSetFirebase);
 function updateEditor(data)
 		{
 			//var row = aceEditor.session.getLength() - 1;
-      var cursorPosition = aceEditor.getCursorPosition();
-      //console.log("cursor position"+cursorPosition);
       //var column = aceEditor.session.getLine(row).length; 
+      var cursorPosition = aceEditor.getCursorPosition();
       var txtarea = data.val().codeEditor;
       console.log("txtarea = "+txtarea);
       aceEditor.getSession().setValue(txtarea, 1); //set value in ace editor
@@ -80,12 +79,11 @@ function listenSetFirebase()
 
 // Run button to compile code       
 window.executeCode = function executeCode(){
-  
   //var CodeArea= document.getElementById("editor").value;
   var CodeArea=aceEditor.getSession().getValue();
   console.log("Output =" +CodeArea);
   document.getElementById("output").innerHTML = CodeArea
-  //console.log(CodeArea.childNodes[0]);
+  
   //Sockets
   /*var socket = io('http://localhost');
       socket.on('news', function (data) {
