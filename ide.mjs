@@ -60,7 +60,7 @@ function updateEditor(data)
       //aceEditor.navigateLineEnd();
       //ISSUE HERE https://stackoverflow.com/questions/27625028/how-to-move-the-cursor-to-the-end-of-the-line-in-ace-editor
       //aceEditor.gotoLine(row + 1, column);
-      aceEditor.session.moveCursorToPosition(cursorPosition);
+      aceEditor.moveCursorToPosition(cursorPosition);
 		}
 
 
