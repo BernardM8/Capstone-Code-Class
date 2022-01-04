@@ -49,6 +49,15 @@ window.changeLanguage = function changeLanguage(){
   else if(language == 'node' ){aceEditor.session.setMode("ace/mode/javascript");}
 }
 
+window.assign = function assign(){
+  let assign = $("#assign").val;
+  if(assign == 'timed' ){
+    console.log("timed triggered");}
+  else if(assign == 'practice' ){
+    console.log("practice triggered");
+  } 
+}
+
 changeLanguage();
 onValue(dataRef, updateEditor);
 JsCodeArea.addEventListener('keydown', listenSetFirebase);

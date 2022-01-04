@@ -16,9 +16,16 @@
     padding: 4px;
     font-size: 18px;
     font-family: sans-serif;
-    width: 650px;
+    width: 350px;
 }
-
+.assign-code{
+    background: lightgray;
+    text-align: left;
+    padding: 4px;
+    font-size: 18px;
+    font-family: sans-serif;
+    width: 350px; 
+}
 
 .languages{
     background: white;
@@ -45,7 +52,7 @@
     border: 11px solid gray;
     font-size: 14px;
     width: 550px;
-    margin-left: 75px;
+    margin-left: 60px;
 }
 
 .button-container{
