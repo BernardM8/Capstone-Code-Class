@@ -52,7 +52,7 @@ window.changeLanguage = function changeLanguage(){
 //Assign code problem select section
 window.assignProblem = function assignProblem(){
   console.log("assign triggered");
-  let mode = $("#assign").val;
+  let mode = $("#assign").val();
   if(mode == 'timed' ){
     console.log("timed triggered");
   }
