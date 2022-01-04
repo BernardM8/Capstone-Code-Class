@@ -52,11 +52,17 @@ window.changeLanguage = function changeLanguage(){
 //Assign code problem select section
 window.assignProblem = function assignProblem(){
   let mode = $("#assign").val();
-  if(mode == 'timed' ){
+  if(mode == 'timed' ){ 
     console.log("timed triggered");
+    var CodeArea=aceEditor.getSession().getValue();
+    //need to add setter to firebase
+    aceEditor2.getSession().setValue(CodeArea, 1);
   }
   else if(mode == 'practice' ){
     console.log("practice triggered");
+    var CodeArea=aceEditor.getSession().getValue();
+    //need to add setter to firebase
+    aceEditor2.getSession().setValue(CodeArea, 1);
   } 
 }
 
