@@ -24,7 +24,7 @@
 <body >
   <div class="header">CodeClass</div>
   
-  <!--editorlanguage change section-->
+  <!--Language change section-->
   <div class="control-panel">
     Select Language
     &nbsp; &nbsp;
@@ -36,13 +36,16 @@
     </select>
   </div>
 
+  <!--Assign code problem section-->
   <div class="assign-code">
     Assign Code 
     &nbsp; &nbsp;
-    <select id="assign" class="assign" onchange="assign()">
+    <select id="assign" class="assign">
       <option value = "practice"> practice </option>
       <option value = "timed"> timed </option>
     </select>
+    <br>
+  <input class="AssignButton" type="submit" name="SUBMITBUTTON" onclick="assignProblem()"/>
   </div>
 
     <!--editor sections to enter code-->
