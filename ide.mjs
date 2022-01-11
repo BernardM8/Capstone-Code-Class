@@ -67,9 +67,9 @@ window.assignProblem = function assignProblem(){
 }
 
 changeLanguage();
-//onValue(dataRef, updateEditor);
-JsCodeArea.addEventListener('keydown', listenSetFirebase);
 onValue(dataRef, updateEditor);
+JsCodeArea.addEventListener('keydown', listenSetFirebase(event));
+//onValue(dataRef, updateEditor);
 
 //function getter from firbase and setter into ace editor
 function updateEditor(data)
@@ -89,8 +89,11 @@ function updateEditor(data)
 
 
 //function getter from ace editor and setter for firebase
-function listenSetFirebase() 
+function listenSetFirebase(event) 
 { 
+  if (event.key==="Backspace"||event.key==="Delete"){
+    console.log("Backspace or Delete detected: "+event.key);
+  }
   var CodeArea=aceEditor.getSession().getValue();
   console.log("Listener = "+CodeArea);
   var jsedit = 
