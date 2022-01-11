@@ -106,9 +106,9 @@ function listenSetFirebase(event)
 
 
 changeLanguage();
-onValue(dataRef, updateEditor); //update editor from firebase
-JsCodeArea.addEventListener('keydown', listenSetFirebase); //set firebase from key event
 //onValue(dataRef, updateEditor); //update editor from firebase
+JsCodeArea.addEventListener('keydown', listenSetFirebase); //set firebase from key event
+onValue(dataRef, updateEditor); //update editor from firebase
 
 
 // Run button to compile code       
