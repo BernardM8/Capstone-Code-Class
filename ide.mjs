@@ -67,9 +67,9 @@ window.assignProblem = function assignProblem(){
 }
 
 changeLanguage();
-onValue(dataRef, updateEditor);
+//onValue(dataRef, updateEditor);
 JsCodeArea.addEventListener('keydown', listenSetFirebase);
-
+onValue(dataRef, updateEditor);
 
 //function getter from firbase and setter into ace editor
 function updateEditor(data)
