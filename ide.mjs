@@ -65,12 +65,12 @@ window.assignProblem = function assignProblem(){
     aceEditor2.getSession().setValue(CodeArea, 1);
   } 
 }
-
+/*
 changeLanguage();
 onValue(dataRef, updateEditor);
 JsCodeArea.addEventListener('keydown', listenSetFirebase(event));
 //onValue(dataRef, updateEditor);
-
+*/
 //function getter from firbase and setter into ace editor
 function updateEditor(data)
 		{
@@ -102,6 +102,12 @@ function listenSetFirebase(event)
   };
   set(dataRef, jsedit);
 }
+
+
+changeLanguage();
+onValue(dataRef, updateEditor);
+JsCodeArea.addEventListener('keydown', listenSetFirebase(event));
+//onValue(dataRef, updateEditor);
 
 
 
