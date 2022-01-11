@@ -111,7 +111,7 @@ function listenSetFirebase(event)
       codeEditor : CodeArea
     };
     set(dataRef, jsedit);
-  }catch(err){
+  } catch(err){
     console.log("error: "+err)
   }
 }
