@@ -21,15 +21,10 @@ const database = getDatabase(app);
 const dataRef  = ref(database, 'User1/');
 const JsCodeArea = document.getElementById("editor");
 
-
 // Create ACE editor
-//window.onload = function(){
   const aceEditor = ace.edit("editor"); 
   aceEditor.setTheme("ace/theme/monokai");
   const session = aceEditor.getSession();
-  //session.setUseWrapMode(true);
-  //session.setUseWorker(false);
-//}
 
 // Create ACE editor 2
 const aceEditor2 = ace.edit("editor2"); 
@@ -37,6 +32,7 @@ aceEditor2.setTheme("ace/theme/monokai");
 const session2 = aceEditor.getSession();
 aceEditor2.session.setMode("ace/mode/c_cpp");
 const JsCodeArea2 = document.getElementById("editor2");
+
 
 //Change Language select section
 window.changeLanguage = function changeLanguage(){
@@ -64,32 +60,20 @@ window.assignProblem = function assignProblem(){
   } 
 }
 
-
 //function getter from firbase and setter into ace editor
 function updateEditor(data)
-		{
-			//var row = aceEditor.session.getLength() - 1;
-      //var column = aceEditor.session.getLine(row).length; 
-      var cursorPosition = aceEditor.getCursorPosition();
-      var txtarea = data.val().codeEditor;
-      console.log("txtarea = "+txtarea);
-      aceEditor.getSession().setValue(txtarea, 1); //set value in ace editor
-      //aceEditor.clearSelection();
-      //aceEditor.navigateLineEnd();
-      //ISSUE HERE https://stackoverflow.com/questions/27625028/how-to-move-the-cursor-to-the-end-of-the-line-in-ace-editor
-      //aceEditor.gotoLine(row + 1, column);
-      aceEditor.moveCursorToPosition(cursorPosition);
-		}
-
+	{
+    var cursorPosition = aceEditor.getCursorPosition();
+    var txtarea = data.val().codeEditor;
+    console.log("txtarea = "+txtarea);
+    aceEditor.getSession().setValue(txtarea, 1); //set value in ace editor
+    aceEditor.moveCursorToPosition(cursorPosition);
+	}
 
 //function getter from ace editor and setter for firebase
 function listenSetFirebase(event) 
 { 
   console.log("check event.key: "+event.key);
-
-  if (event.key==="Backspace"||event.key==="Delete"){
-    console.log("Backspace or Delete detected: "+event.key);
-  }
   var CodeArea=aceEditor.getSession().getValue();
   console.log("Listener = "+CodeArea);
   var jsedit = 
@@ -97,25 +81,13 @@ function listenSetFirebase(event)
     codeEditor : CodeArea
   };
   set(dataRef, jsedit);
-  
- /*try{
-    var CodeArea= aceEditor.getSession().getValue();
-    console.log("Listener = "+CodeArea);
-    var jsedit = 
-    {
-      codeEditor : CodeArea
-    };
-    await set(dataRef, jsedit);
-  } catch(err){
-    console.log("error: "+err)
-  }*/
 }
 
-
+//----Main-----
 changeLanguage();
 onValue(dataRef, updateEditor); //update editor from firebase
 JsCodeArea.addEventListener('keyup', listenSetFirebase); //set firebase from key event
-//onValue(dataRef, updateEditor); //update editor from firebase
+
 
 
 // Run button to compile code       
