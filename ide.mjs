@@ -64,11 +64,6 @@ window.assignProblem = function assignProblem(){
   } 
 }
 
-/*
-changeLanguage();
-onValue(dataRef, updateEditor);
-JsCodeArea.addEventListener('keydown', listenSetFirebase(event));
-*/
 
 //function getter from firbase and setter into ace editor
 function updateEditor(data)
@@ -118,9 +113,9 @@ function listenSetFirebase(event)
 
 
 changeLanguage();
-//onValue(dataRef, updateEditor); //update editor from firebase
-JsCodeArea.addEventListener('keydown', listenSetFirebase); //set firebase from key event
 onValue(dataRef, updateEditor); //update editor from firebase
+JsCodeArea.addEventListener('keydown', listenSetFirebase); //set firebase from key event
+//onValue(dataRef, updateEditor); //update editor from firebase
 
 
 // Run button to compile code       
