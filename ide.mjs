@@ -90,7 +90,8 @@ function updateEditor(data)
 //function getter from ace editor and setter for firebase
 function listenSetFirebase(event) 
 { 
-  console.log("check event: "+event);
+  console.log("check event.key: "+event.key);
+
   if (event.key==="Backspace"||event.key==="Delete"){
     console.log("Backspace or Delete detected: "+event.key);
   }
@@ -105,9 +106,8 @@ function listenSetFirebase(event)
 
 
 changeLanguage();
-onValue(dataRef, updateEditor);
 JsCodeArea.addEventListener('keydown', listenSetFirebase);
-
+onValue(dataRef, updateEditor);
 
 
 // Run button to compile code       
