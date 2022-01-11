@@ -104,13 +104,13 @@ function listenSetFirebase(event)
   set(dataRef, jsedit);
   */
  try{
-    var CodeArea=await aceEditor.getSession().getValue();
+    var CodeArea= aceEditor.getSession().getValue();
     console.log("Listener = "+CodeArea);
     var jsedit = 
     {
       codeEditor : CodeArea
     };
-    set(dataRef, jsedit);
+    await set(dataRef, jsedit);
   } catch(err){
     console.log("error: "+err)
   }
