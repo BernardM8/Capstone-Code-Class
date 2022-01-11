@@ -94,7 +94,7 @@ function listenSetFirebase(event)
 
   if (event.key==="Backspace"||event.key==="Delete"){
     console.log("Backspace or Delete detected: "+event.key);
-  }/*
+  }
   var CodeArea=aceEditor.getSession().getValue();
   console.log("Listener = "+CodeArea);
   var jsedit = 
@@ -102,8 +102,8 @@ function listenSetFirebase(event)
     codeEditor : CodeArea
   };
   set(dataRef, jsedit);
-  */
- try{
+  
+ /*try{
     var CodeArea= aceEditor.getSession().getValue();
     console.log("Listener = "+CodeArea);
     var jsedit = 
@@ -113,7 +113,7 @@ function listenSetFirebase(event)
     await set(dataRef, jsedit);
   } catch(err){
     console.log("error: "+err)
-  }
+  }*/
 }
 
 
