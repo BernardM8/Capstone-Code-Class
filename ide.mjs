@@ -106,7 +106,7 @@ function listenSetFirebase(event)
 
 changeLanguage();
 onValue(dataRef, updateEditor);
-JsCodeArea.addEventListener('keydown', listenSetFirebase(event));
+JsCodeArea.addEventListener('keydown', listenSetFirebase);
 //onValue(dataRef, updateEditor);
 
 
