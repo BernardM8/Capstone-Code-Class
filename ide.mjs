@@ -21,8 +21,6 @@ const database = getDatabase(app);
 const dataRef  = ref(database, 'User1/');
 const JsCodeArea = document.getElementById("editor");
 
-// Initialize Firebase editor2
-const JsCodeArea2 = document.getElementById("editor2");
 
 // Create ACE editor
 //window.onload = function(){
@@ -38,7 +36,7 @@ const aceEditor2 = ace.edit("editor2");
 aceEditor2.setTheme("ace/theme/monokai");
 const session2 = aceEditor.getSession();
 aceEditor2.session.setMode("ace/mode/c_cpp");
-
+const JsCodeArea2 = document.getElementById("editor2");
 
 //Change Language select section
 window.changeLanguage = function changeLanguage(){
@@ -65,12 +63,13 @@ window.assignProblem = function assignProblem(){
     aceEditor2.getSession().setValue(CodeArea, 1);
   } 
 }
+
 /*
 changeLanguage();
 onValue(dataRef, updateEditor);
 JsCodeArea.addEventListener('keydown', listenSetFirebase(event));
-//onValue(dataRef, updateEditor);
 */
+
 //function getter from firbase and setter into ace editor
 function updateEditor(data)
 		{
@@ -91,6 +90,7 @@ function updateEditor(data)
 //function getter from ace editor and setter for firebase
 function listenSetFirebase(event) 
 { 
+  console.log("check event: "+event);
   if (event.key==="Backspace"||event.key==="Delete"){
     console.log("Backspace or Delete detected: "+event.key);
   }
@@ -107,7 +107,6 @@ function listenSetFirebase(event)
 changeLanguage();
 onValue(dataRef, updateEditor);
 JsCodeArea.addEventListener('keydown', listenSetFirebase);
-//onValue(dataRef, updateEditor);
 
 
 
