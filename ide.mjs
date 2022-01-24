@@ -9,7 +9,7 @@ import {fs} from "fs";
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.1/firebase-app.js";
 import { getDatabase, ref, set, get, onValue } from "https://www.gstatic.com/firebasejs/9.4.1/firebase-database.js";
 
-export const run = async () => {
+export const run = async (uploadParams) => {
   try {
     const data = await s3Client.send(new PutObjectCommand(uploadParams));
     console.log("Success", data);
@@ -119,7 +119,7 @@ window.executeCode = function executeCode(){
   const fileStream = fs.createReadStream(CodeArea);
 
   // Set the parameters
-  export const uploadParams = {
+  const uploadParams = {
     Bucket: "primaryinputsortbucket",
     // Add the required 'Key' parameter using the 'path' module.
     //Key: path.basename(file),
@@ -127,7 +127,7 @@ window.executeCode = function executeCode(){
     Body: fileStream,
   };
 
-  run();
+  run(uploadParams);
   document.getElementById("output").innerHTML = CodeArea
   
 }
