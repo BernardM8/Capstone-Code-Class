@@ -9,6 +9,17 @@ import {fs} from "fs";
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.1/firebase-app.js";
 import { getDatabase, ref, set, get, onValue } from "https://www.gstatic.com/firebasejs/9.4.1/firebase-database.js";
 
+export const run = async () => {
+  try {
+    const data = await s3Client.send(new PutObjectCommand(uploadParams));
+    console.log("Success", data);
+    return data; // For unit tests.
+  } catch (err) {
+    console.log("Error", err);
+  }
+};
+
+
 // Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyDICcooHUciQZvAs_dPpExVxqBhtJMojbY",
@@ -97,6 +108,8 @@ JsCodeArea.addEventListener('keyup', listenSetFirebase); //set firebase from key
 
 
 
+
+
 // Run button to compile code       
 window.executeCode = function executeCode(){  
   var CodeArea=aceEditor.getSession().getValue();
@@ -114,59 +127,7 @@ window.executeCode = function executeCode(){
     Body: fileStream,
   };
 
-
-// Upload file to specified bucket.
-export const run = async () => {
-  try {
-    const data = await s3Client.send(new PutObjectCommand(uploadParams));
-    console.log("Success", data);
-    return data; // For unit tests.
-  } catch (err) {
-    console.log("Error", err);
-  }
-};
-run();
-
-
-  var CodeArea=aceEditor.getSession().getValue();
-  console.log("Output =" +CodeArea);
+  run();
   document.getElementById("output").innerHTML = CodeArea
   
-  //Sockets
-  /*var socket = io('http://localhost');
-      socket.on('news', function (data) {
-        console.log(data);
-        socket.emit('my other event', { my: 'data' });
-    });*/
-    
-  //import { Socket } from "dgram";
-    /*var net = require('net');
-    var host = '10.0.0.63';
-    var port = 8080;
-
-    var socket = new net.Socket();
-    socket.connect(port, host, () => {
-    socket.write('GET / HTTP/1.0\r\n\r\n');
-    socket.write('language: '+'$("#languages").val()'+'\r\n');
-    socket.write('message: '+'editor.getSession().getValue()'+'\r\n');
-    });
-
-    socket.on('data', (data) => {
-    console.log(`${data}`);
-    socket.destroy();
-    });*/
-    
-    //Still working on 
-    /*$.ajax({
-        //url: "ide/app/compiler.php",
-        url: "compiler.js",
-        method: "POST",
-        data:{
-            language: $("#languages").val(),
-            code: editor.getSession().getValue()
-        },
-        success: function(response){
-            $(".output").text(response)
-        }
-    })*/
 }
