@@ -1,3 +1,9 @@
+// Import required AWS SDK clients and commands for Node.js.
+import { PutObjectCommand } from "@aws-sdk/client-s3";
+import { s3Client } from "./libs/s3Client.js"; // Helper function that creates Amazon S3 service client module.
+import {path} from "path";
+import {fs} from "fs";
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.1/firebase-app.js";
@@ -32,6 +38,7 @@ aceEditor2.setTheme("ace/theme/monokai");
 const session2 = aceEditor.getSession();
 aceEditor2.session.setMode("ace/mode/c_cpp");
 const JsCodeArea2 = document.getElementById("editor2");
+
 
 
 //Change Language select section
@@ -91,8 +98,36 @@ JsCodeArea.addEventListener('keyup', listenSetFirebase); //set firebase from key
 
 
 // Run button to compile code       
-window.executeCode = function executeCode(){
-  //var CodeArea= document.getElementById("editor").value;
+window.executeCode = function executeCode(){  
+  var CodeArea=aceEditor.getSession().getValue();
+  console.log("Output =" +CodeArea);
+
+  //const file = "OBJECT_PATH_AND_NAME"; // Path to and name of object. For example '../myFiles/index.js'.
+  const fileStream = fs.createReadStream(CodeArea);
+
+  // Set the parameters
+  export const uploadParams = {
+    Bucket: "primaryinputsortbucket",
+    // Add the required 'Key' parameter using the 'path' module.
+    //Key: path.basename(file),
+    // Add the required 'Body' parameter
+    Body: fileStream,
+  };
+
+
+// Upload file to specified bucket.
+export const run = async () => {
+  try {
+    const data = await s3Client.send(new PutObjectCommand(uploadParams));
+    console.log("Success", data);
+    return data; // For unit tests.
+  } catch (err) {
+    console.log("Error", err);
+  }
+};
+run();
+
+
   var CodeArea=aceEditor.getSession().getValue();
   console.log("Output =" +CodeArea);
   document.getElementById("output").innerHTML = CodeArea
