@@ -1,9 +1,9 @@
 // Import required AWS SDK clients and commands for Node.js.
-import { PutObjectCommand } from "@aws-sdk/client-s3";
+/*import { PutObjectCommand } from "@aws-sdk/client-s3";
 import { s3Client } from "./libs/s3Client.js"; // Helper function that creates Amazon S3 service client module.
 import {path} from "path";
 import {fs} from "fs";
-
+*/
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.1/firebase-app.js";
