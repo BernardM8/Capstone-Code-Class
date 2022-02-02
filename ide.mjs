@@ -8,7 +8,7 @@ import {fs} from "fs";
 // https://firebase.google.com/docs/web/setup#available-libraries
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.1/firebase-app.js";
 import { getDatabase, ref, set, get, onValue } from "https://www.gstatic.com/firebasejs/9.4.1/firebase-database.js";
-
+/*
 export const run = async (uploadParams) => {
   try {
     const data = await s3Client.send(new PutObjectCommand(uploadParams));
@@ -18,7 +18,7 @@ export const run = async (uploadParams) => {
     console.log("Error", err);
   }
 };
-
+*/
 // Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyDICcooHUciQZvAs_dPpExVxqBhtJMojbY",
@@ -112,7 +112,7 @@ window.executeCode = function executeCode(){
   console.log("Output =" +CodeArea);
 
   //const file = "OBJECT_PATH_AND_NAME"; // Path to and name of object. For example '../myFiles/index.js'.
-  const fileStream = fs.createReadStream(CodeArea);
+  /*const fileStream = fs.createReadStream(CodeArea);
 
   // Set the parameters
   const uploadParams = {
@@ -124,6 +124,7 @@ window.executeCode = function executeCode(){
   };
 
   run(uploadParams);
+  */
   document.getElementById("output").innerHTML = CodeArea
   
 }
