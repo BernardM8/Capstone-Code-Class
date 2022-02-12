@@ -60,7 +60,7 @@
     /*overflow-y: scroll;*/
     height: 400px; 
     text-align: right;
-    border: 8px solid gray;
+    border: 6px solid gray;
     border-radius: 5px;
     font-size: 14px;
     width: 550px;
@@ -75,9 +75,9 @@
 .btn{
     background: #57a958;
     color: white;
-    padding: 8px;
+    padding: 10px;
     border: 0;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 .output{
@@ -86,8 +86,8 @@
     padding: 4px;
     border: 6px solid gray;
     border-radius: 10px;
-    min-height: 150px;
-    width: 642px;
+    min-height: 125px;
+    width: 650px;
     resize: none;
     padding-left: 35px;
 }

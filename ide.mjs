@@ -1,24 +1,9 @@
-// Import required AWS SDK clients and commands for Node.js.
-/*import { PutObjectCommand } from "@aws-sdk/client-s3";
-import { s3Client } from "./libs/s3Client.js"; // Helper function that creates Amazon S3 service client module.
-import {path} from "path";
-import {fs} from "fs";
-*/
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.1/firebase-app.js";
 import { getDatabase, ref, set, get, onValue } from "https://www.gstatic.com/firebasejs/9.4.1/firebase-database.js";
-/*
-export const run = async (uploadParams) => {
-  try {
-    const data = await s3Client.send(new PutObjectCommand(uploadParams));
-    console.log("Success", data);
-    return data; // For unit tests.
-  } catch (err) {
-    console.log("Error", err);
-  }
-};
-*/
+import {request} from "https://<client_id>.compilers.sphere-engine.com/api/v4";
+
 // Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyDICcooHUciQZvAs_dPpExVxqBhtJMojbY",
@@ -112,7 +97,7 @@ window.executeCode = function executeCode(){
   console.log("Output =" +CodeArea);
 
   //----POSTsubmission Section------
-  var request = require('request');
+  //var request = require('request');
 
   // define access parameters
   var accessToken = '793be204cc61db86da5cdc7512b8b4c4';
