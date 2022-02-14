@@ -1,4 +1,4 @@
-import request from "./request/request.js";
+import request from "./request";
 //import * as fs from 'fs';
 //----POSTsubmission Section------
 //var request = require('request');
