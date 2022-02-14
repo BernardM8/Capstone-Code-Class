@@ -35,9 +35,10 @@ aceEditor2.session.setMode("ace/mode/c_cpp");
 const JsCodeArea2 = document.getElementById("editor2");
 
 
+const language = 'c++';
 //Change Language select section
 window.changeLanguage = function changeLanguage(){
-  let language = $("#languages").val();
+  language = $("#languages").val();
   if(language == 'c++' ){aceEditor.session.setMode("ace/mode/c_cpp");}
   else if(language == 'java' ){aceEditor.session.setMode("ace/mode/java");}
   else if(language == 'python' ){aceEditor.session.setMode("ace/mode/python");}
