@@ -1,4 +1,4 @@
-//import request from "request";
+import request from "request";
 //import * as fs from 'fs';
 //----POSTsubmission Section------
 //var request = require('request');
@@ -31,7 +31,7 @@ export function submitCode(sourceCode, languageCode){
     console.log('sourceCode: '+sourceCode);
     console.log('language: '+languageCode);
     
-    /*
+    
     
     // define access parameters
     var accessToken = '793be204cc61db86da5cdc7512b8b4c4';
@@ -40,8 +40,8 @@ export function submitCode(sourceCode, languageCode){
 
     // define request parameters
     var submissionData = {
-        compilerId: 116,
-        source: "print('Testing Sphere-Engine')"
+        compilerId: languageCode,
+        source: sourceCode
     };
 
 
@@ -101,6 +101,7 @@ export function submitCode(sourceCode, languageCode){
                     var responseOutput=response.body;
                     //fs.writeFile("output.json",response.body );
                     console.log("GET: "+responseOutput); // list of submissions in JSON
+                    return responseOutput;
                 } else {
                     if (response.statusCode === 401) {
                         console.log('Invalid access token');
@@ -118,5 +119,4 @@ export function submitCode(sourceCode, languageCode){
         });
 
     }, 2000);
-    */
 }

@@ -94,13 +94,11 @@ function listenSetFirebase(event)
   set(dataRef, jsedit);
 }
 
+
 //----Main-----
 changeLanguage();
 onValue(dataRef, updateEditor); //update editor from firebase
 JsCodeArea.addEventListener('keyup', listenSetFirebase); //set firebase from key event
-
-
-
 
 
 
@@ -112,4 +110,3 @@ window.executeCode = function executeCode(){
   document.getElementById("output").innerHTML = compiledOutput;
   
 }
-
