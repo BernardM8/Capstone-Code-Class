@@ -35,14 +35,23 @@ aceEditor2.session.setMode("ace/mode/c_cpp");
 const JsCodeArea2 = document.getElementById("editor2");
 
 
-const language = 'c++';
+var languageCode = 1;
 //Change Language select section
 window.changeLanguage = function changeLanguage(){
-  language = $("#languages").val();
-  if(language == 'c++' ){aceEditor.session.setMode("ace/mode/c_cpp");}
-  else if(language == 'java' ){aceEditor.session.setMode("ace/mode/java");}
-  else if(language == 'python' ){aceEditor.session.setMode("ace/mode/python");}
-  else if(language == 'node' ){aceEditor.session.setMode("ace/mode/javascript");}
+  let language = $("#languages").val();
+  if(language == 'c++' ){
+    aceEditor.session.setMode("ace/mode/c_cpp");
+    languageCode = 1;
+  } else if(language == 'java' ){
+    aceEditor.session.setMode("ace/mode/java");
+    languageCode = 10;
+  } else if(language == 'python' ){
+    aceEditor.session.setMode("ace/mode/python");
+    languageCode = 116;
+  } else if(language == 'node' ){
+    aceEditor.session.setMode("ace/mode/javascript");
+    languageCode = 56;
+  }
 }
 
 //Assign code problem select section
@@ -99,7 +108,7 @@ JsCodeArea.addEventListener('keyup', listenSetFirebase); //set firebase from key
 window.executeCode = function executeCode(){  
   var CodeArea=aceEditor.getSession().getValue();
   console.log("Output =" +CodeArea);
-  var compiledOutput = submitCode(CodeArea, language);
+  var compiledOutput = submitCode(CodeArea, languageCode);
   document.getElementById("output").innerHTML = compiledOutput;
   
 }

@@ -26,10 +26,10 @@
 });
 */
 
-export function submitCode(sourceCode, language){
+export function submitCode(sourceCode, languageCode){
     console.log('Test call!');
     console.log('sourceCode: '+sourceCode);
-    console.log('language: '+language);
+    console.log('language: '+languageCode);
     
     /*
     
