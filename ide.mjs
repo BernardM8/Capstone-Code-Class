@@ -2,7 +2,7 @@
 // https://firebase.google.com/docs/web/setup#available-libraries
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.1/firebase-app.js";
 import { getDatabase, ref, set, get, onValue } from "https://www.gstatic.com/firebasejs/9.4.1/firebase-database.js";
-import {submitCode} from "./sphereEngine.mjs";
+import {CompilerFeature} from "./compiler.mjs";
 
 // Firebase configuration
 const firebaseConfig = {
@@ -106,7 +106,10 @@ JsCodeArea.addEventListener('keyup', listenSetFirebase); //set firebase from key
 window.executeCode = function executeCode(){  
   var CodeArea=aceEditor.getSession().getValue();
   console.log("Output =" +CodeArea);
-  var compiledOutput = submitCode(CodeArea, languageCode);
-  document.getElementById("output").innerHTML = compiledOutput;
+
+  const compiler = new CompilerFeature(CodeArea, languageCode);
+  var compiledOutput = compiler.submitCode();
+
   
+  document.getElementById("output").innerHTML = compiledOutput;
 }
