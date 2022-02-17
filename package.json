@@ -1,0 +1,14 @@
+{
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.49.0",
+    "dotenv": "^14.3.2",
+    "request": "^2.88.2",
+    "webpack": "^5.68.0"
+  },
+  "devDependencies": {
+    "parcel-plugin-externals": "^0.5.2"
+  },
+  "externals": [
+    "aws-sdk"
+  ]
+}
