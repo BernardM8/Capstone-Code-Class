@@ -1,5 +1,5 @@
-import request from "./request";  //was blocked because of a disallowed MIME type (“text/html”).
-//import request from "request";  //
+//import request from "./request";  //was blocked because of a disallowed MIME type (“text/html”).
+import request from "request";  //
 
 export class CompilerFeature{
 
