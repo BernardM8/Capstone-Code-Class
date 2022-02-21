@@ -14,27 +14,28 @@
     <script src="lib/ace.js"></script>
     <script src="lib/theme-monokai.js"></script>
     
-    
-    <!--script type="module" src="firebase.mjs"></script-->
+    <!-- IDE.mjs -->
     <script type="module" src="ide.mjs"></script>
 
-    <!--script src="/socket.io/socket.io.js"></script-->
 
   </head>
 <body >
-  <script>
-    /*SEC_HTTPS = true;
-    SEC_BASE = "compilers.widgets.sphere-engine.com"; 
-    (function(d, s, id){ SEC = window.SEC || (window.SEC = []);
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; 
-      js.src = (SEC_HTTPS ? "https" : "http") + "://" + SEC_BASE + "/static/sdk/sdk.js";
-      fjs.parentNode.insertBefore(js, fjs);   
-    }(document, "script", "sphere-engine-compilers-jssdk"));*/
-    </script>
+  <div class="header">Code-Class</div>
 
-  <div class="header">CodeClass</div>
-  <!--div class="sec-widget" data-widget="eea54ba32b60ae2330c0afd9dcabd0da"></div-->
+
+  <div class="dropdown">
+    <span>Menu</span>
+    <div class="dropdown-content">
+      <p>Assign Code Problem</p>
+    </div>
+    
+
+  <div class="sidebar">
+    <div>User 1</div>
+    <div>User 2</div>
+    <div>User 3</div>
+  </div>
+
 
   <!--Language change section-->
   <div class="control-panel">
@@ -69,6 +70,6 @@
         <button class="btn" onclick="executeCode()"> Run </button>
     </div>
     <div class="output" id="output"></div>
-
+    <div class="output2" id="output2"></div>
   </body>
 </html> 

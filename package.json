@@ -1,12 +1,19 @@
 {
+  "name": "Code-Class bundler",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "webpack"
+  },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.49.0",
     "dotenv": "^14.3.2",
     "request": "^2.88.2",
+    "util": "^0.12.4",
     "webpack": "^5.68.0"
   },
   "devDependencies": {
-    "parcel-plugin-externals": "^0.5.2"
+    "parcel-plugin-externals": "^0.5.2",
+    "webpack-cli": "^4.9.2"
   },
   "externals": [
     "aws-sdk"

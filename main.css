@@ -1,32 +1,88 @@
 *{margin:0;}
 
+body{
+    background-color: rgb(39, 39, 39);
+    overflow:scroll;
+}
+
 .header {
-    background-color: rgb(105,105,105);
+    background-color: rgb(121, 120, 120);
+    font-family: Arial, Helvetica, sans-serif;
     text-align: center;
-    font-size: 25px;
+    font-size: 22px;
     font-weight: bold;
     color: white;
     padding: 4px;
     font-family: sans-serif;
 }
 
+
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    background-color: #646464;
+    color: white;
+    width: 200px;
+    height: 30px;
+    text-align: center;
+  }
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #7c7c7c;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(78, 78, 78, 0.2);
+    padding: 12px 16px;
+    z-index: 1;
+  }
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+
+.sidebar{
+    height: 40%;
+    width: 200px;
+    position: fixed;
+    color: white;
+    bottom:0;
+    left: 0;
+    padding-bottom:40px;
+    background-color: #636363;
+ }
+ .sidebar div{
+    padding: 8px;
+    fontsize: 16px;
+   
+ }
+ .body-text{
+    margin-left:10%;
+    fontsize: 16px;
+}
+
+
+
 .control-panel{
-    background: lightgray;
+    background: rgb(126, 125, 125);
+    color: white;
     text-align: left;
     padding: 4px;
-    font-size: 18px;
+    font-size: 16px;
     font-family: sans-serif;
     width: 650px;
     border-radius: 5px;
+    margin-left: 200px;
 }
 
 .assign-code{
-    background: lightgray;
+    background: rgb(148, 146, 146);
     text-align: right;
     padding: 4px;
     font-size: 18px;
     font-family: sans-serif;
     width: 650px; 
+    margin-left: 200px;
 }
 
 .AssignButton{
@@ -39,18 +95,19 @@
 .languages{
     background: white;
     border: 4px solid gray;
+    
 }
 
 #editor {
     display:inline-block;
-    /*float: left;*/
     height: 400px; 
     text-align: left;
-    border: 6px solid gray;
+    border: 4px solid gray;
     font-size: 16px;
     width: 650px;
-    border-radius: 5px;
-    padding-left: 35px;
+    border-radius: 2px;
+    margin-left: 100px; 
+    position: fixed;
 }
 
 
@@ -60,34 +117,54 @@
     /*overflow-y: scroll;*/
     height: 400px; 
     text-align: right;
-    border: 6px solid gray;
-    border-radius: 5px;
+    border: 4px solid gray;
+    border-radius: 2px;
     font-size: 14px;
-    width: 550px;
-    margin-left: 60px;
+    width: 600px;
+    margin-left: 1000px;
+    position: fixed;
 }
 
 .button-container{
     text-align: left;
     padding: 4px;
+    padding-left: 35px;
 }
 
 .btn{
     background: #57a958;
     color: white;
-    padding: 10px;
+    padding: 9px;
     border: 0;
-    border-radius: 5px;
+    border-radius: 4px;
+    margin-left: 180px;
+    margin-top: 410px;
 }
 
 .output{
     background: hsla(0, 0%, 0%, 0.815);
     color: aliceblue;
     padding: 4px;
-    border: 6px solid gray;
+    border: 4px solid gray;
     border-radius: 10px;
     min-height: 125px;
     width: 650px;
     resize: none;
-    padding-left: 35px;
+    margin-left: 200px;
+    margin-top: 3px;
+    position: fixed;
+}
+
+.output2{
+    background: hsla(0, 0%, 0%, 0.815);
+    color: aliceblue;
+    padding: 4px;
+    border: 4px solid gray;
+    border-radius: 10px;
+    min-height: 125px;
+    width: 600px;
+    resize: none;
+    margin-left: 1100px;
+    margin-top: 3px;
+    position: fixed;
 }
