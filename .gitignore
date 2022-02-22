@@ -5,6 +5,7 @@ node_modules
 server.js
 testcall.mjs
 webpack-build
+compiler.mjs
 
 # ignore NodeJS configuration files
 #package-lock.json
