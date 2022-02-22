@@ -107,7 +107,7 @@ window.executeCode = function executeCode(){
   var CodeArea=aceEditor.getSession().getValue();
   console.log("Output =" +CodeArea);
 
-  const compiler = new CompilerFeature(sourceCode, languageCode); 
+  const compiler = new CompilerFeature(CodeArea, languageCode); 
   var compiledOutput;
 /*
   var initializePromise=compiler.submitCode();
