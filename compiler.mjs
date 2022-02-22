@@ -3,7 +3,8 @@
 
 //import request from "./request";  //was blocked because of a disallowed MIME type (“text/html”).
 //import request from "request";  //Uncaught TypeError: Error resolving module specifier “request”. Relative module specifiers must start with “./”, “../” or “/”.
-import {request} from "/request/index.js";
+
+//import {request} from "/request/index.js";
 
 export class CompilerFeature{
 
@@ -29,7 +30,7 @@ export class CompilerFeature{
         return this.resultOutput;
     }
 
-
+/*
     // method to submit/compile code 
     submitCode(callback){    
         return new Promise((resolve, reject) =>{
@@ -72,12 +73,12 @@ export class CompilerFeature{
                             } else if (response.statusCode === 400) {
                                 var body = JSON.parse(response.body);
                                 console.log('Error code: ' + body.error_code + ', details available in the message: ' + body.message)
-                            }*/
+                            }*//*
                         }
                     }
                 });
             }, 2000);
         });     
-    }
+    }*/
 }
 

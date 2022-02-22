@@ -106,10 +106,10 @@ JsCodeArea.addEventListener('keyup', listenSetFirebase); //set firebase from key
 window.executeCode = function executeCode(){  
   var CodeArea=aceEditor.getSession().getValue();
   console.log("Output =" +CodeArea);
-/*
+
   const compiler = new CompilerFeature(sourceCode, languageCode); 
   var compiledOutput;
-
+/*
   var initializePromise=compiler.submitCode();
   initializePromise.then(function(result){
     compiledOutput = result;
