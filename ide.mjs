@@ -2,8 +2,8 @@
 // https://firebase.google.com/docs/web/setup#available-libraries
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.1/firebase-app.js";
 import { getDatabase, ref, set, onValue } from "https://www.gstatic.com/firebasejs/9.4.1/firebase-database.js";
-//import {CompilerFeature} from "./compiler.mjs";
-import {CompilerFeature} from "./bundle.js";
+import {CompilerFeature} from "./compiler.mjs";
+//import {CompilerFeature} from "./bundle.js";
 
 // Firebase configuration
 const firebaseConfig = {
