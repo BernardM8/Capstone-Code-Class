@@ -12,5 +12,4 @@ webpack-build
 #package.json
 npm-debug.log
 webpack.config.js
-compiler.mjs
 app
