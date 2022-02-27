@@ -16,8 +16,9 @@
     
     <!-- IDE.mjs -->
     <script type="module" src="ide.mjs"></script>
+    
     <!-- Webpack bundle -->
-    <!--script src="bundle.js"></script-->
+    <!--script src="node_modules/request/index.js"></script-->
 
   </head>
 <body >
@@ -36,28 +37,15 @@
   </div>
   
 
-
+  <!--active user section-->
   <div class="sidebar">
     <div>User 1</div>
     <div>User 2</div>
     <div>User 3</div>
   </div>
 
-
-  <!--Language change section-->
-  <div class="control-panel">
-    Select Language
-    &nbsp; &nbsp;
-    <select id="languages" class="languages" onchange="changeLanguage()">
-      <option value = "c++"> c++ </option>
-      <option value = "java"> Java </option>
-      <option value = "python"> Python </option>
-      <option value = "node"> Node JS </option>
-    </select>
-  </div>
-
   <!--Assign code problem section-->
-  <div class="assign-code">
+  <!--div class="assign-code">
     Assign Code Problem
     &nbsp; &nbsp;
     <select id="assign" class="assign">
@@ -66,11 +54,26 @@
     </select>
     <br>
   <input class="AssignButton" type="submit" value="Assign" onclick="assignProblem()"/>
+  </div-->
+
+
+  <div class="EditorHeaderStudent">Student</div>
+  <div class="EditorHeaderInstructor">Instructor</div>
+
+  <!--editor sections to enter code-->
+  <div class="Editor" id="editor"> <label for="editor"></label></div>
+  <div class="Editor2" id="editor2"> <label for="editor2"></label></div>
+
+  <!--Language change section-->
+  <div class="control-panel">&nbsp;&nbsp;Language &nbsp; &nbsp;
+    <select id="languages" class="languages" onchange="changeLanguage()">
+      <option value = "c++"> c++ </option>
+      <option value = "java"> Java </option>
+      <option value = "python"> Python </option>
+      <option value = "node"> Node JS </option>
+    </select>
   </div>
 
-    <!--editor sections to enter code-->
-    <div class="Editor" id="editor"> <label for="editor"></label></div>
-    <div class="Editor2" id="editor2"> <label for="editor2"></label></div>
 
     <!--Output section for compiler-->
     <div class="button-container">
