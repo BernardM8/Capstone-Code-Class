@@ -110,7 +110,7 @@ window.executeCode = function executeCode(){
 
   const compiler = new CompilerFeature(CodeArea, languageCode); 
   var compiledOutput;
-/*
+
   var initializePromise=compiler.submitCode();
   initializePromise.then(function(result){
     compiledOutput = result;
@@ -121,6 +121,6 @@ window.executeCode = function executeCode(){
       }, function(err) {
           console.log(err);
       })
-      */
+      
 
 }
