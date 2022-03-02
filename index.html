@@ -21,13 +21,12 @@
     <!-- node_modules -->
     <base href=".">
     <script type="module" src="node_modules/request/index.js"></script>
-    
+</head>
 
-  </head>
 <body >
   <div class="header">Code-Class</div>
 
-
+  <!-- Menu bar -->
   <div class="dropdown">
     <span>Menu</span>&nbsp;&nbsp;&nbsp;&nbsp;
     <span>Edit</span>&nbsp;&nbsp;&nbsp;&nbsp;
@@ -55,10 +54,10 @@
   <div class="EditorHeaderStudent">Student</div>
   <div class="EditorHeaderInstructor">Instructor</div>
 
-  <!--editor sections to enter code-->
-  <div class="Editor" id="editor"> <label for="editor"></label></div>
-  <div class="Editor2" id="editor2"> <label for="editor2"></label></div>
-    
+
+  <!--editor1 sections to enter code-->
+  <div class="Editor" id="editor"> <label for="editor"></label>
+  
     <!--Language change section-->
     <div class="control-panel">&nbsp;&nbsp;Language &nbsp; &nbsp;
       <select id="languages" class="languages" onchange="changeLanguage()">
@@ -75,24 +74,29 @@
 
       <!--Output section for compiler1-->
       <div class="output" id="output"></div>
-   
     </div>
- 
+  </div>
 
-    <!--Output section for compiler-->
+
+  <!--editor1 sections to enter code-->
+  <div class="Editor2" id="editor2"> <label for="editor2"></label>
+    <!--Output section for compiler2-->
     <div class="output2" id="output2"></div>
+  </div>
 
-
+    
+  <!--Left Sidebar section-->
+  <div class="Left-sidebar" id="Left-sidebar">
     <!--chat message section-->
     <div class="chat-box" id="chat-box">chat-box</div>
-  
+      <!--active user section-->
+      <div class="ActiveUsers" id="ActiveUsers">
+        <div class="body-text" id="body-text">User 1</div>
+        <div class="body-text" id="body-text">User 2</div>
+        <div class="body-text" id="body-text">User 3</div>
+      </div>
+    
+  </div>
 
-    <!--active user section-->
-    <div class="sidebar">
-      <div>User 1</div>
-      <div>User 2</div>
-      <div>User 3</div>
-    </div>
-
-  </body>
+</body>
 </html> 
