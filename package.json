@@ -23,6 +23,7 @@
     "webpack": "^5.68.0"
   },
   "devDependencies": {
+    "@types/request": "^2.48.8",
     "parcel-plugin-externals": "^0.5.2",
     "webpack-cli": "^4.9.2"
   },
