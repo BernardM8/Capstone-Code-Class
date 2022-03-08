@@ -1,0 +1,17 @@
+# ignore the NodeJs modules
+node_modules
+webpack-build
+
+# ignore local server code : server.js
+server.js
+testcall.mjs
+
+compiler.mjs
+
+
+# ignore NodeJS configuration files
+#package-lock.json
+#package.json
+npm-debug.log
+webpack.config.js
+app
