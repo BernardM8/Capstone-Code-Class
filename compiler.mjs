@@ -5,7 +5,7 @@
 //import request from "request";  //Uncaught TypeError: Error resolving module specifier “request”. Relative module specifiers must start with “./”, “../” or “/”.
 
 //import {request} from "./node_modules/request/index.js";
-import {request} from "./node_modules/@types/request/index.d.ts";
+import {request} from "../node_modules/@types/request/index.d.ts";
 //import * as request from "./node_modules/request/index.js";
 
 export class CompilerFeature{
