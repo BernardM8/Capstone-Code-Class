@@ -108,7 +108,9 @@ window.executeCode = function executeCode(){
   var CodeArea=aceEditor.getSession().getValue();
   console.log("Output =" +CodeArea);
 
-  const compiler = new CompilerFeature(CodeArea, languageCode); 
+document.getElementById("output").innerHTML = CodeArea; // remove when implementing compiler 
+
+  /*const compiler = new CompilerFeature(CodeArea, languageCode); 
   var compiledOutput;
 
   var initializePromise=compiler.submitCode();
@@ -121,6 +123,6 @@ window.executeCode = function executeCode(){
       }, function(err) {
           console.log(err);
       })
-      
+      */
 
 }
