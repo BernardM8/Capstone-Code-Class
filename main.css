@@ -51,9 +51,7 @@ body{
     position: absolute;
     width: 193px;
     height: 100%;
- 
     /*border: solid rgb(255, 253, 253);*/
-
     margin-top: 4px;
     border-radius: 4px;
     display:inline-block;
@@ -70,12 +68,10 @@ body{
     border: solid rgb(255, 253, 253);
     text-align: center;
     /*margin-top: 0px;*/
-    top: 0;
+    top: -854px;
     border-radius: 4px;
     left: -4px;
     display:inline-block;
-    
-    
 }
 .ActiveUsers{
     height: 100%;
@@ -85,7 +81,7 @@ body{
     /*bottom:-380px;*/
     top: 40%;
     left: -4px;
-    margin-top: 12px;
+    margin-top:-842px;
     /*padding-bottom:40px;*/
     background-color: #636363;
  }
@@ -124,6 +120,7 @@ body{
     height: 850px;
     width: 100%;
     border: 4px solid rgb(230, 65, 65);
+    row-gap:0;
 }
 
 /* ---Editor Sections---*/
