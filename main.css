@@ -200,7 +200,7 @@ body{
     max-width: 752px;
     width: 100%;
     border-radius: 2px;
-    /*margin-left: 205px;*/
+    margin-left: 205px;
     /*margin-top: 438px;*/
     /*margin-top: 22.5%;*/
     bottom: -45px;
@@ -247,7 +247,8 @@ body{
     max-width: 747px;
     /*width: 39.8%;*/
     resize: none;
-    margin-left: -4px;
+    /*margin-left: -4px;*/
+    margin-left: 205px;
     /*margin-top: -10px;*/
     /*margin-top: 5%;*/
     position: absolute;
