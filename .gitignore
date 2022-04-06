@@ -1,11 +1,11 @@
 # ignore the NodeJs modules
 node_modules
 webpack-build
-
+dist
+src
 # ignore local server code : server.js
 server.js
 testcall.mjs
-
 compiler.mjs
 
 
