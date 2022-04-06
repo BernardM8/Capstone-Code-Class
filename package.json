@@ -2,7 +2,7 @@
   "name": "Code-Class bundler",
   "version": "1.0.0",
   "scripts": {
-    "build": "webpack"
+    "build": "webpack ./src/app.mjs"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.49.0",
