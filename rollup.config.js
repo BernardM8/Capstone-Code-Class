@@ -2,8 +2,10 @@ import { nodeResolve } from '@rollup/plugin-node-resolve';
 
 export default{
     input: 'src/app.mjs',
+    //input: 'src/compiler.mjs',
     output: {
         file: 'dist/bundle.js',
+        //file: 'dist/compiler.js',
         format:'cjs',
         inlineDynamicImports: true
     },
