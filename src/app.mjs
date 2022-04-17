@@ -5,7 +5,7 @@
 
 import { initializeApp } from "firebase/app";
 import { getDatabase, ref, set, onValue } from "firebase/database";
-import {CompilerFeature} from "./src/compiler.mjs";
+import {CompilerFeature} from "src/compiler.mjs";
 //import {CompilerFeature} from "./bundle.js";
 
 // Firebase configuration

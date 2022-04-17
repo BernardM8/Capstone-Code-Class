@@ -17,5 +17,5 @@ testcall.mjs
 
 npm-debug.log
 #webpack.config.js
-#babel.config.json
+babel.config.json
 .gitignore
