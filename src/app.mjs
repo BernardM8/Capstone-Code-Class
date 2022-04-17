@@ -5,7 +5,7 @@
 
 import { initializeApp } from "firebase/app";
 import { getDatabase, ref, set, onValue } from "firebase/database";
-import {CompilerFeature} from "src/compiler.mjs";
+import {request} from "request"; 
 //import {CompilerFeature} from "./bundle.js";
 
 // Firebase configuration
@@ -106,6 +106,63 @@ JsCodeArea.addEventListener('keyup', listenSetFirebase); //set firebase from key
 
 
 
+// method to submit/compile code 
+function submitCode(callback){    
+  return new Promise((resolve, reject) =>{
+      setTimeout(()=>{
+          //console.log('sourceCode: '+this.sourceCode);
+          //console.log('language: '+this.language+'\n');        
+          
+          //request function POST
+          request({
+              url: 'https://api.jdoodle.com/v1/execute',
+              method: 'POST',
+              json: {
+                script : sourceCode,
+                language: language,
+                versionIndex: "0",
+                clientId: 'cab108faec1e851b720d54d302a6a9d6',
+                clientSecret:'562fcedf8ff4ce99b4a81fceeda23aa8acf8176f1a083958ded6d7bf84bff5ea'
+              }
+          }, 
+
+          function (error, response, body) {          
+              if (error) {
+                  console.log('Connection problem');
+              }           
+              // process response
+              if (response) {
+                  console.log('error: ', error);
+                  console.log('statusCode:', response && response.statusCode);
+                  console.log('body: ', body);
+                  console.log('\n');
+
+                  if (response.statusCode === 200) {
+                      //var responseBody = JSON.parse(response.body); // output data in JSON
+                      console.log('Compiled Output:', response.body.output);
+                      resolve(response.body.output);              
+                  
+                  } else {
+                      console.log('error: ', error);
+                      reject();
+                      /*
+                      if (response.statusCode === 401) {
+                          console.log('Invalid access token');
+                      } else if (response.statusCode === 402) {
+                          console.log('Unable to create submission');
+                      } else if (response.statusCode === 400) {
+                          var body = JSON.parse(response.body);
+                          console.log('Error code: ' + body.error_code + ', details available in the message: ' + body.message)
+                      }*/
+                  }
+              }
+          });
+      }, 2000);
+  });     
+}
+
+
+
 // Run button to compile code       
 window.executeCode = function executeCode(){  
   var CodeArea=aceEditor.getSession().getValue();
@@ -129,3 +186,5 @@ window.executeCode = function executeCode(){
       
 
 }
+
+
