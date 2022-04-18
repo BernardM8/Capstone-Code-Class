@@ -1,4 +1,4 @@
-import babel from 'rollup-plugin-babel';
+//import babel from 'rollup-plugin-babel';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
 //import { resolve } from 'path-browserify';
 
@@ -12,7 +12,7 @@ export default{
         inlineDynamicImports: true
     },
     plugins: [nodeResolve({jsnext: true}),
-       babel()
+       //babel()
     ],
     
 }
