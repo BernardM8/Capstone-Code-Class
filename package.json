@@ -17,6 +17,7 @@
     "fs": "^0.0.1-security",
     "latest-version": "^6.0.0",
     "net": "^1.0.2",
+    "node-polyfill-webpack-plugin": "^1.1.4",
     "path-browserify": "^1.0.1",
     "polyfills": "^1.9.5",
     "request": "^2.88.2",
