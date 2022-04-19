@@ -12,7 +12,10 @@ export default{
         inlineDynamicImports: true
     },
     plugins: [nodeResolve({jsnext: true}),
-       //babel()
+       //babel(),
+       peerDepsExternal({
+           includeDependencies: true,
+    }),
     ],
     
 }
