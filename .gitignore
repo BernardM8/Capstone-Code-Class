@@ -13,7 +13,7 @@ testcall.mjs
 # ignore NodeJS configuration files
 #package-lock.json
 #package.json
-
+lib
 olderSourceCode
 npm-debug.log
 webpack.config.js

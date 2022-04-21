@@ -11,6 +11,7 @@ const NodePolyfillPlugin = require("node-polyfill-webpack-plugin")
 module.exports = {
     target: 'node',
     resolve:{
+        extensions:[ '.ts', '.js' ],
         fallback: { 
             
             "http": require.resolve("stream-http"), 
@@ -35,14 +36,16 @@ module.exports = {
             process : 'process/browser',
             stream : 'stream-browserify',
             zlib: 'browserify-zlib',
-            //buffer : 'buffer'
+            buffer : 'buffer'
         }
     },
     plugins: [
         new webpack.ProvidePlugin({
             Buffer: ['buffer', 'Buffer'],
-            //process:'process/browser',
         }),
+        /*new webpack.ProvidePlugin({
+            process: 'process/browser',
+        }),*/
         new NodePolyfillPlugin()
     ],
 
@@ -58,4 +61,5 @@ module.exports = {
     devServer:{
         contentBase: "./node_modules",
     },
+    
 };
