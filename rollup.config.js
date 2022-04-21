@@ -16,6 +16,12 @@ export default{
        peerDepsExternal({
            includeDependencies: true,
     }),
+    /*resolve({
+        jsnext: true,
+        main: true,
+        browser: true,
+      }),
+      commonjs()*/
     ],
     
 }

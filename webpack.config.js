@@ -26,7 +26,8 @@ module.exports = {
             "crypto": require.resolve("crypto-browserify"),
             "stream": require.resolve("stream-browserify"), 
             "zlib": require.resolve("browserify-zlib"),
-            "path": require.resolve("path-browserify")
+            "path": require.resolve("path-browserify"),
+            //"process": require.resolve("process/browser")
             
         },
         alias:{
@@ -47,12 +48,13 @@ module.exports = {
 
     mode: 'development', //Production
     entry:{
-        main: path.resolve(__dirname, 'src/app.mjs'),
+        main: path.resolve(__dirname, 'src/app.mjs'), // entry file to all our js modules
     },
     output:{
         path: path.resolve(__dirname, 'dist'), //output directory
         filename: 'bundle.js' ,
     },
+    devtool: "source-map",
     devServer:{
         contentBase: "./node_modules",
     },
