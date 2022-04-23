@@ -1,5 +1,6 @@
 //import babel from 'rollup-plugin-babel';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
+import commonjs from '@rollup/plugin-commonjs';
 //import { resolve } from 'path-browserify';
 
 export default{
@@ -12,6 +13,7 @@ export default{
         inlineDynamicImports: true
     },
     plugins: [nodeResolve({jsnext: true}),
+        commonjs()
        //babel(),
        //peerDepsExternal({
            //includeDependencies: true,
