@@ -16,7 +16,7 @@ module.exports = {
             
             "http": require.resolve("stream-http"), 
             "https": require.resolve("https-browserify"),
-            //"buffer": require.resolve("buffer/"),
+            "buffer": require.resolve("buffer/"),
             "buffer": require.resolve("safe-buffer/"),
             //"firebase" : require.resolve("firebase"),
             "url": require.resolve("url/"),
@@ -36,7 +36,7 @@ module.exports = {
             process : 'process/browser',
             stream : 'stream-browserify',
             zlib: 'browserify-zlib',
-            buffer : 'buffer'
+            //buffer : 'buffer'
         }
     },
     plugins: [
