@@ -13,9 +13,9 @@ export default{
     },
     plugins: [nodeResolve({jsnext: true}),
        //babel(),
-       peerDepsExternal({
-           includeDependencies: true,
-    }),
+       //peerDepsExternal({
+           //includeDependencies: true,
+   // }),
     /*resolve({
         jsnext: true,
         main: true,
