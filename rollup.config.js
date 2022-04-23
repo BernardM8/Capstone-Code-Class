@@ -1,7 +1,17 @@
 //import babel from 'rollup-plugin-babel';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
+import includePaths from 'rollup-plugin-includepaths';
 //import { resolve } from 'path-browserify';
+
+let includePathOptions = {
+    include: {},
+    paths: ['node_modules/request/lib/helpers', 'node_modules/request/lib/cookies'],
+    external: [],
+    extensions: ['.js', '.json', '.html']
+};
+
+
 
 export default{
     input: 'src/app.mjs',
@@ -13,7 +23,8 @@ export default{
         inlineDynamicImports: true
     },
     plugins: [nodeResolve({jsnext: true}),
-        commonjs()
+        commonjs(),
+        includePaths(includePathOptions)
        //babel(),
        //peerDepsExternal({
            //includeDependencies: true,
