@@ -8,7 +8,7 @@ let includePathOptions = {
     include: {},
     paths: ['node_modules/request/lib/helpers', 'node_modules/request/lib/cookies'],
     external: [],
-    extensions: ['.js', '.json', '.html']
+    extensions: ['.js', '.json', '.html', 'mjs']
 };
 
 
