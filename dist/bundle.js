@@ -1,6 +1,6 @@
 'use strict';
 
-var compiler_mjs = require('src/compiler.mjs');
+var compiler_mjs = require('compiler.mjs');
 
 // Create ACE editor
   const aceEditor = ace.edit("editor"); 
