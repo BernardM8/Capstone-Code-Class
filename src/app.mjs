@@ -91,9 +91,9 @@ function submitCode(callback,sourceCode,language){
 
 // Run button to compile code       
 window.executeCode = function executeCode(){  
-  var sourceCode = 'print("testing jdoodle API")';              //source code to test compiler service
+  var sourceCode = print('testing jdoodle API');              //source code to test compiler service
   var languageCode = 'python3';  
-  
+  console.log("sourceCode = testing jdoodle API");
   var compiledOutput;
   var initializePromise=compiler.submitCode(sourceCode,languageCode);
   initializePromise.then(function(result){
