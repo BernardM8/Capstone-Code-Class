@@ -16,7 +16,6 @@
     
     <!-- IDE app.mjs -->
     <script type="module" src="dist/bundle.js"></script>
-    <form action="https://api.jdoodle.com/v1/execute" method = "post"></form>
     <!--script type="module" src="app.mjs"></script-->
     <!--cript type="module" src="compiler.mjs"></script-->
 
@@ -77,7 +76,7 @@
       
       <!--Run button-->
       <div class="button-container">
-        <form method="post">
+        <form action="https://api.jdoodle.com/v1/execute" method="post">
         <button class="btn" onclick="executeCode()"> Run </button>
       </form>
       </div>
