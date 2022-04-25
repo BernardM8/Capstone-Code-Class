@@ -1,4 +1,6 @@
-//import {CompilerFeature} from "src/compiler.mjs";
+//https://www.youtube.com/watch?v=Fek_oJM_s4I
+//https://stackoverflow.com/questions/67921950/why-does-it-show-error-405-not-allowed-using-github-pages
+
 import {request} from "request"; 
 
 
@@ -33,6 +35,7 @@ window.changeLanguage = function changeLanguage(){
     languageCode = 'nodejs';
   }
 }
+
 
 // method to submit/compile code 
 function submitCode(callback,sourceCode,language){    
@@ -94,8 +97,9 @@ window.executeCode = function executeCode(){
   var sourceCode = print('testing jdoodle API');              //source code to test compiler service
   var languageCode = 'python3';  
   console.log("sourceCode = testing jdoodle API");
+  
   var compiledOutput;
-  var initializePromise=compiler.submitCode(sourceCode,languageCode);
+  var initializePromise=submitCode(sourceCode,languageCode);
   initializePromise.then(function(result){
     compiledOutput = result;
           console.log("Initialized details");

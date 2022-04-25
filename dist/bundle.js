@@ -33851,7 +33851,9 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var request__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! request */ "./node_modules/request/index.js");
 /* provided dependency */ var console = __webpack_require__(/*! ./node_modules/console-browserify/index.js */ "./node_modules/console-browserify/index.js");
-//import {CompilerFeature} from "src/compiler.mjs";
+//https://www.youtube.com/watch?v=Fek_oJM_s4I
+//https://stackoverflow.com/questions/67921950/why-does-it-show-error-405-not-allowed-using-github-pages
+
  
 
 
@@ -33886,6 +33888,7 @@ window.changeLanguage = function changeLanguage(){
     languageCode = 'nodejs';
   }
 }
+
 
 // method to submit/compile code 
 function submitCode(callback,sourceCode,language){    
@@ -33947,8 +33950,9 @@ window.executeCode = function executeCode(){
   var sourceCode = print('testing jdoodle API');              //source code to test compiler service
   var languageCode = 'python3';  
   console.log("sourceCode = testing jdoodle API");
+  
   var compiledOutput;
-  var initializePromise=compiler.submitCode(sourceCode,languageCode);
+  var initializePromise=submitCode(sourceCode,languageCode);
   initializePromise.then(function(result){
     compiledOutput = result;
           console.log("Initialized details");
