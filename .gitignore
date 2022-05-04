@@ -19,3 +19,11 @@ npm-debug.log
 webpack.config.js
 babel.config.json
 .gitignore
+.vscode
+Credentials
+.firebase
+y
+ui-debug.log
+database-debug.log
+dist
+.github/workflows

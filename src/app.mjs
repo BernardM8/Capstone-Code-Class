@@ -1,8 +1,45 @@
-//https://www.youtube.com/watch?v=Fek_oJM_s4I
-//https://stackoverflow.com/questions/67921950/why-does-it-show-error-405-not-allowed-using-github-pages
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
-import {request} from "request"; 
+//import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.1/firebase-app.js";
+//import { getDatabase, ref, set, onValue } from "https://www.gstatic.com/firebasejs/9.4.1/firebase-database.js";
 
+import { initializeApp } from "firebase/app";
+import { getDatabase, ref, set, onValue, update } from "firebase/database";
+
+
+const firebaseConfig = {//Personal Firebase
+  apiKey: "AIzaSyD3M9j2pGKraAnDOHOx0JdZOvblyj-84x4",
+  authDomain: "capstone-ide.firebaseapp.com",
+  databaseURL: "https://capstone-ide-default-rtdb.firebaseio.com",
+  projectId: "capstone-ide",
+  storageBucket: "capstone-ide.appspot.com",
+  messagingSenderId: "402917015039",
+  appId: "1:402917015039:web:98a9c4b13ea95de44fbbca",
+  measurementId: "G-Z3ECK6ZW3K"
+};
+
+/*
+// Firebase configuration
+const firebaseConfig = { //Group Firebase
+  apiKey: "AIzaSyDICcooHUciQZvAs_dPpExVxqBhtJMojbY",
+  authDomain: "codelab-database-1.firebaseapp.com",
+  databaseURL: "https://codelab-database-1-default-rtdb.firebaseio.com",
+  projectId: "codelab-database-1",
+  storageBucket: "codelab-database-1.appspot.com",
+  messagingSenderId: "573387563239",
+  appId: "1:573387563239:web:161f23412c218ba50ac242",
+  measurementId: "G-4XTVC35JQL"
+};
+*/
+
+
+
+// Initialize Firebase editor
+const app = initializeApp(firebaseConfig);
+const database = getDatabase(app);
+const dataRef  = ref(database, 'User1/');
+const JsCodeArea = document.getElementById("editor");
 
 // Create ACE editor
   const aceEditor = ace.edit("editor"); 
@@ -36,78 +73,68 @@ window.changeLanguage = function changeLanguage(){
   }
 }
 
+//Assign code problem select section
+/*window.assignProblem = function assignProblem(){
+  let mode = $("#assign").val();
+  if(mode == 'timed' ){ 
+    console.log("timed triggered");
+    var CodeArea=aceEditor.getSession().getValue();
+    //need to add setter to firebase
+    aceEditor2.getSession().setValue(CodeArea, 1);
+  }
+  else if(mode == 'practice' ){
+    console.log("practice triggered");
+    var CodeArea=aceEditor.getSession().getValue();
+    //need to add setter to firebase
+    aceEditor2.getSession().setValue(CodeArea, 1);
+  } 
+}*/
 
-// method to submit/compile code 
-function submitCode(callback,sourceCode,language){    
-  return new Promise((resolve, reject) =>{
-      setTimeout(()=>{
-          //console.log('sourceCode: '+this.sourceCode);
-          //console.log('language: '+this.language+'\n');        
-          
-          //request function POST
-          request({
-              url: 'https://api.jdoodle.com/v1/execute',
-              method: 'POST',
-              json: {
-                script : sourceCode,
-                language: language,
-                versionIndex: "0",
-                clientId: 'cab108faec1e851b720d54d302a6a9d6',
-                clientSecret:'562fcedf8ff4ce99b4a81fceeda23aa8acf8176f1a083958ded6d7bf84bff5ea'
-              }
-          }, 
+//function getter from firbase and setter into ace editor
+function updateEditor(data)
+	{
+    var cursorPosition = aceEditor.getCursorPosition();
+    var txtarea = data.val().codeEditor;
+    var compileArea = data.val().codeCompiler;
+  
+    console.log("txtarea = "+txtarea);
+    aceEditor.getSession().setValue(txtarea, 1); //set value in ace editor
+    aceEditor.moveCursorToPosition(cursorPosition);
+    document.getElementById("output").innerHTML = compileArea;
+	}
 
-          function (error, response, body) {          
-              if (error) {
-                  console.log('Connection problem');
-              }           
-              // process response
-              if (response) {
-                  console.log('error: ', error);
-                  console.log('statusCode:', response && response.statusCode);
-                  console.log('body: ', body);
-                  console.log('\n');
-
-                  if (response.statusCode === 200) {
-                      //var responseBody = JSON.parse(response.body); // output data in JSON
-                      console.log('Compiled Output:', response.body.output);
-                      resolve(response.body.output);              
-                  
-                  } else {
-                      console.log('error: ', error);
-                      reject();
-                      /*
-                      if (response.statusCode === 401) {
-                          console.log('Invalid access token');
-                      } else if (response.statusCode === 402) {
-                          console.log('Unable to create submission');
-                      } else if (response.statusCode === 400) {
-                          var body = JSON.parse(response.body);
-                          console.log('Error code: ' + body.error_code + ', details available in the message: ' + body.message)
-                      }*/
-                  }
-              }
-          });
-      }, 2000);
-  });     
+//function getter from ace editor and setter into firebase
+function listenSetFirebase(event) 
+{ 
+  console.log("check event.key: "+event.key);
+  var CodeArea=aceEditor.getSession().getValue();
+  console.log("Listener = "+CodeArea);
+  var jsedit = 
+  {
+    codeEditor : CodeArea
+  };
+  update(dataRef, jsedit);
 }
+
+
+//----Main-----
+changeLanguage();
+onValue(dataRef, updateEditor); //update editor from firebase
+JsCodeArea.addEventListener('keyup', listenSetFirebase); //set firebase from key event
+
+
 
 // Run button to compile code       
 window.executeCode = function executeCode(){  
-  var sourceCode = print('testing jdoodle API');              //source code to test compiler service
-  var languageCode = 'python3';  
-  console.log("sourceCode = testing jdoodle API");
-  
-  var compiledOutput;
-  var initializePromise=submitCode(sourceCode,languageCode);
-  initializePromise.then(function(result){
-    compiledOutput = result;
-          console.log("Initialized details");
-          // Use user details from here
-          console.log(compiledOutput)
-          document.getElementById("output").innerHTML = compiledOutput;
-      }, function(err) {
-          console.log(err);
-      })
-}
+  var CodeArea=aceEditor.getSession().getValue();
+  console.log("Output =" +CodeArea);
+  var triggerData = 
+  {
+    codeLanguage : languageCode,
+    codeTrigger : languageCode+CodeArea
+  };
+  update(dataRef, triggerData);
+  document.getElementById("output").innerHTML = "compiling........"; 
 
+  //https://stackoverflow.com/questions/48755746/new-line-command-n-not-working-with-firebase-firestore-database-strings
+}
