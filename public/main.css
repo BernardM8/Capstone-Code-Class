@@ -2,7 +2,7 @@
 
 body{
     background-color: rgb(39, 39, 39);
-    overflow:scroll;
+    /*overflow:scroll;*/
 }
 
 .header {
@@ -82,6 +82,7 @@ body{
     top: 40%;
     left: -4px;
     margin-top:-842px;
+    font-size: 14px;
     /*padding-bottom:40px;*/
     background-color: #636363;
  }
@@ -114,117 +115,101 @@ body{
 */
 
 
+
+/* ------Editor Sections----- */
 .Container_class{
     margin-left: 229px;
     display: grid;
     height: 850px;
+    /*height: 100%;*/
+    /*max-height: 850px;*/
     width: 100%;
     /*border: 4px solid rgb(230, 65, 65);*/
     row-gap:0px;
+    grid-template-columns: 43% 42%;
+    /*grid-template-rows: 36px 52% 200px;*/
+    grid-template-rows: 36px 52% 30%;
 }
 
-/* ---Editor Sections---*/
 .EditorHeaderStudent{
     /*position:absolute;*/
     margin-top: 2px;
-    /*margin-left: 205px;*/
-    /*width: 752px;*/
-    /*width: 40.3%;*/
     height: 27px;
-    width: 90%;
-    max-width: 753px;
+    width: 90.2%;
+    max-width: 752px;
     background: rgb(126, 125, 125);
     color: white;
     border-radius: 2px;
     text-align: center;
     padding: 3px;
     font-size: 16px;
-    position: absolute;
     font-family: sans-serif;
     grid-column: 1;
     grid-row: 1;
-    
 }
 
 .EditorHeaderInstructor{
+    grid-row: 1;
+    grid-column: 2;
     height: 27px;
-    /*margin-left: 1050px;*/
-    margin-left: 55.2%;
-    
     margin-top: 2px;
-    /*width: 702px;*/
+    align-self: start;
     max-width: 702px;
-    width: 90%;
+    width: 90.1%;
     background: rgb(126, 125, 125);
     color: white;
     border-radius: 2px;
     text-align: center;
     padding: 3px;
     font-size: 16px;
-    position: absolute;
+    /*position: absolute;*/
     font-family: sans-serif;
-    grid-column: 2;
-    grid-row: 1;
 }
 
 #editor {
     /*display:inline-block;*/
-    /*max-height: 395px;*/
-    /*height: 41%;*/
-    /*height: 100%;*/
-    height: 500px;
+    /*position: absolute;*/
+    max-height: 500px;
+    height: 99%;
+    overflow-y: scroll;
+    align-self: start;
     text-align: left;
     border: 4px solid gray;
-    font-size: 16px;
-    /*width: 750px;*/
     max-width: 750px;
-    /*width: 40.2%;*/
     width: 90%;
     border-radius: 0px;
-    margin-top: -97px;
-    /*margin-left: 205px; */
-    /*position: absolute;*/
     grid-column:1;
     grid-row: 2;
 }
 
 #editor2 {
     /*display:inline-block;*/
-    margin-top: -97px;
+    /*position: absolute;*/
     max-height: 500px;
-    /*height: 100%; */
+    height: 99%; 
+    overflow-y: scroll;
     text-align: left;
     border: 4px solid gray;
     border-radius: 0px;
     font-size: 14px;
-    width: 600px;
     max-width: 700px;
     width: 90%;
-    /*margin-left: 1050px;*/
-    /*margin-left: 60%;*/
-    /*position: absolute;*/
     grid-column:2;
     grid-row: 2;
 }
 
 .control-panel{
+    /*position: absolute;*/
     background: rgb(126, 125, 125);
     color: white;
     text-align: left;
     padding: 3px;
     font-size: 16px;
     font-family: sans-serif;
-    /*width: 752px;*/
-    /*width: 1000px;*/
-    max-width: 752px;
-    width: 90%;
+    max-width: 754px;
+    width: 90.2%;
     border-radius: 2px;
-    /*margin-left: 205px;*/
-    margin-top: -135px;
-   /* margin-top: 22.5%;*/
-    /*bottom: -45px;*/
     left: -3px;
-    /*position: absolute;*/
     height: 40px;
     grid-column:1;
     grid-row: 3;
@@ -253,51 +238,42 @@ body{
     border-radius: 4px;
     /*margin-left: 850px;*/
     float: right;
-    /*margin-left: 32%;*/
     margin-top: -31px;
 }
 
 .output{
+    /*position: absolute;*/
     background: hsla(0, 0%, 0%, 0.815);
-    color: aliceblue;
+    color: rgb(229, 233, 190);
     padding: 4px;
     border: 4px solid gray;
     border-radius: 10px;
     min-height: 125px;
     width: 99%;
-    max-width: 749px;
-    font-size: 16px;
-    /*width: 39.8%;*/
+    max-width: 747px;
+    font-size: 14px;
     resize: none;
     margin-left: -4px;
-    /*margin-left: 200px;*/
-    /*margin-top: -10px;*/
-    /*margin-top: 5%;*/
     grid-column:1;
     grid-row: 4;
-    /*position: absolute;*/
+    overflow-y: scroll;
 }
 
 .output2{
     background: hsla(0, 0%, 0%, 0.815);
-    color: aliceblue;
+    color: rgb(229, 233, 190);
+    font-size: 14px;
     padding: 4px;
     border: 4px solid gray;
     border-radius: 10px;
     min-height: 125px;
     height: 125px;
-    /*width: 698px;*/
     max-width: 698px;
-    width: 99%;
+    width: 89.5%;
     resize: none;
-    margin-left: -4px;
-    /*margin-left: 1050px;*/
-   /* margin-left: 60%;*/
-    margin-top: -100px;
-    /*margin-top: 24.7%;*/
-    /*position: absolute;*/
-    /*bottom:-183px;*/
-    /*display:inline-block*/;
+    margin-left: -2px;
+    margin-top: 40px;
     grid-column:2;
     grid-row: 3;
+    overflow-y: scroll;
 }

@@ -15054,16 +15054,17 @@ const firebaseConfig = { //Group Firebase
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 const dataRef  = ref(database, 'User1/');
+const dataRef2  = ref(database, 'User2/');
 const JsCodeArea = document.getElementById("editor");
 
 // Create ACE editor
   const aceEditor = ace.edit("editor"); 
-  aceEditor.setTheme("ace/theme/monokai");
+  aceEditor.setTheme("ace/theme/idle_fingers");
   aceEditor.getSession();
 
 // Create ACE editor 2
 const aceEditor2 = ace.edit("editor2"); 
-aceEditor2.setTheme("ace/theme/monokai");
+aceEditor2.setTheme("ace/theme/idle_fingers");
 aceEditor.getSession();
 aceEditor2.session.setMode("ace/mode/c_cpp");
 document.getElementById("editor2");
@@ -15112,11 +15113,26 @@ function updateEditor(data)
     var txtarea = data.val().codeEditor;
     var compileArea = data.val().codeCompiler;
   
-    console.log("txtarea = "+txtarea);
+    //console.log("txtarea = "+txtarea);
     aceEditor.getSession().setValue(txtarea, 1); //set value in ace editor
     aceEditor.moveCursorToPosition(cursorPosition);
     document.getElementById("output").innerHTML = compileArea;
 	}
+
+
+  //function getter from firbase and setter into ace editor
+function updateEditor2(data)
+{
+  var cursorPosition = aceEditor2.getCursorPosition();
+  var txtarea = data.val().codeEditor;
+  var compileArea = data.val().codeCompiler;
+
+  //console.log("txtarea = "+txtarea);
+  aceEditor2.getSession().setValue(txtarea, 1); //set value in ace editor
+  aceEditor2.moveCursorToPosition(cursorPosition);
+  document.getElementById("output2").innerHTML = compileArea;
+}
+
 
 //function getter from ace editor and setter into firebase
 function listenSetFirebase(event) 
@@ -15135,6 +15151,9 @@ function listenSetFirebase(event)
 //----Main-----
 changeLanguage();
 onValue(dataRef, updateEditor); //update editor from firebase
+
+onValue(dataRef2, updateEditor2);
+
 JsCodeArea.addEventListener('keyup', listenSetFirebase); //set firebase from key event
 
 
@@ -15149,7 +15168,7 @@ window.executeCode = function executeCode(){
     codeTrigger : languageCode+CodeArea
   };
   update(dataRef, triggerData);
+  document.getElementById("output").innerHTML = "compiling........"; 
 
-  document.getElementById("output").innerHTML = "compiling........"; // remove when implementing compiler 
-
+  //https://stackoverflow.com/questions/48755746/new-line-command-n-not-working-with-firebase-firestore-database-strings
 };
