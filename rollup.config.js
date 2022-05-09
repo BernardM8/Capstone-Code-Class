@@ -14,11 +14,11 @@ let includePathOptions = {
 
 
 export default{
-    input: 'src/app.mjs',
-    //input: 'src/compiler.mjs',
+    //input: 'src/app.mjs',
+    input: 'src2/App2.mjs',
     output: {
-        file: 'dist/bundle.js',
-        //file: 'dist/compiler.js',
+        //file: 'dist/bundle.js',
+        file: 'dist2/bundle.js',
         format:'cjs',
         inlineDynamicImports: true
     },

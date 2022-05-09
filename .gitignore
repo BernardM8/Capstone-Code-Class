@@ -27,3 +27,9 @@ ui-debug.log
 database-debug.log
 dist
 .github/workflows
+
+
+# Section to work on Farzaad's IDE
+src
+public
+functions
