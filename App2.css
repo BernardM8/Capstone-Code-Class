@@ -70,17 +70,19 @@
     #HostIDE {
         /*display:inline-block;*/
         /*position: absolute;*/
-        height: 700px;
+        border: black solid 1px;
+        height: 650px;
         overflow-y: scroll;
         text-align: left;
-        width: 390 px;
+        width: 550px;
     }
-    
+
     #MyIDE {
         /*display:inline-block;*/
         /*position: absolute;*/
-        height: 700px;
+        border: black solid 1px;
+        height: 650px;
         overflow-y: scroll;
         text-align: left;
-        width: 390 px;
+        width: 550px;
     }
