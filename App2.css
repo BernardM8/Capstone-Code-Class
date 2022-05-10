@@ -74,7 +74,7 @@
         height: 650px;
         overflow-y: scroll;
         text-align: left;
-        width: 550px;
+        width: 550;
     }
 
     #MyIDE {
@@ -84,5 +84,5 @@
         height: 650px;
         overflow-y: scroll;
         text-align: left;
-        width: 550px;
+        width: 550;
     }
