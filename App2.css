@@ -68,7 +68,7 @@
     }
 
     #HostIDE {
-        /*display:inline-block;*/
+        display:inline-block;
         /*position: absolute;*/
         border: black solid 1px;
         height: 650px;
@@ -79,7 +79,7 @@
     }
 
     #MyIDE {
-        /*display:inline-block;*/
+        display:inline-block;
         /*position: absolute;*/
         border: black solid 1px;
         height: 650px;
