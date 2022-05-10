@@ -20,19 +20,19 @@ const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 const dataRef  = ref(database, 'User2/');
 const dataRef2  = ref(database, 'User1/');
-const JsCodeArea = document.getElementById("HostIDE");
+const JsCodeArea = document.getElementById("MyIDE");
 
 // Create ACE editor
-  const aceEditor = ace.edit("HostIDE"); 
+  const aceEditor = ace.edit("MyIDE"); 
   aceEditor.setTheme("ace/theme/idle_fingers");
   aceEditor.getSession();
 
 // Create ACE editor 2
-const aceEditor2 = ace.edit("MyIDE"); 
+const aceEditor2 = ace.edit("HostIDE"); 
 aceEditor2.setTheme("ace/theme/idle_fingers");
 aceEditor.getSession();
 aceEditor2.session.setMode("ace/mode/c_cpp");
-document.getElementById("MyIDE");
+document.getElementById("HostIDE");
 
 
            
