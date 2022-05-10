@@ -23,11 +23,11 @@ const dataRef2  = ref(database, 'User1/');
 const JsCodeArea = document.getElementById("MyIDE");
 
 // Create ACE editor
-  const aceEditor = ace.edit("MyIDE"); 
-  aceEditor.setTheme("ace/theme/idle_fingers");
-  aceEditor.getSession();
+const aceEditor = ace.edit("MyIDE"); 
+aceEditor.setTheme("ace/theme/idle_fingers");
+aceEditor.getSession();
 
-// Create ACE editor 2
+// Create ACE editor 2  
 const aceEditor2 = ace.edit("HostIDE"); 
 aceEditor2.setTheme("ace/theme/idle_fingers");
 aceEditor.getSession();
@@ -68,7 +68,7 @@ function updateEditor(data)
     aceEditor.getSession().setValue(txtarea, 1); //set value in ace editor
     aceEditor.moveCursorToPosition(cursorPosition);
 
-   // document.getElementById("output").innerHTML = compileArea;
+    document.getElementById("output").innerHTML = compileArea;
 	}
 
 
@@ -132,25 +132,8 @@ function displayOut()
 }
 
 // function is used to pop up a new window that will be used as a terminal to show output of code in ide when running it
-function OpenNewWindow()  
+window.OpenNewWindow = function OpenNewWindow()  
 {  
-    var terminalWindow = window.open(undefined, 'about', 'width=800,height=400,scrollbars=yes');  
-    
-    for (let i = 0; i < 100; i++) 
-    {
-        terminalWindow.document.write("Hello World ");
-        terminalWindow.document.write('<br>');
-        
-    }
-    var name = terminalWindow.prompt("Enter something: ")
-    terminalWindow.document.write(name);
-    
-}
-
-
-/*
-// Run button to compile code       
-window.executeCode = function executeCode(){  
   var CodeArea=aceEditor.getSession().getValue();
   console.log("Output =" +CodeArea);
   var triggerData = 
@@ -159,8 +142,19 @@ window.executeCode = function executeCode(){
     codeTrigger : languageCode+CodeArea
   };
   update(dataRef, triggerData);
-  document.getElementById("output").innerHTML = "compiling........"; 
+  document.getElementById("output").innerHTML = "compiling........";
 
-  //https://stackoverflow.com/questions/48755746/new-line-command-n-not-working-with-firebase-firestore-database-strings
-};
-*/
+  /*
+  var terminalWindow = window.open(undefined, 'about', 'width=800,height=400,scrollbars=yes');  
+    
+    for (let i = 0; i < 100; i++) 
+    {
+        terminalWindow.document.write("Hello World ");
+        terminalWindow.document.write('<br>');
+        
+    }
+
+    var name = terminalWindow.prompt("Enter something: ")
+    terminalWindow.document.write(name);
+    */
+}
