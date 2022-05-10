@@ -66,3 +66,21 @@
         display: flex;
         flex-shrink: 1;
     }
+
+    #HostIDE {
+        /*display:inline-block;*/
+        /*position: absolute;*/
+        height: 700px;
+        overflow-y: scroll;
+        text-align: left;
+        width: 390 px;
+    }
+    
+    #MyIDE {
+        /*display:inline-block;*/
+        /*position: absolute;*/
+        height: 700px;
+        overflow-y: scroll;
+        text-align: left;
+        width: 390 px;
+    }
