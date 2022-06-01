@@ -1,0 +1,30 @@
+{
+  "projects": {},
+  "targets": {
+    "capstone-ide": {
+      "hosting": {
+        "StudentIDE": [
+          "codeclass-ide-student-ide"
+        ],
+        "InstructorIDE": [
+          "codeclass-ide-instructor-ide"
+        ],
+        "Login": [
+          "codeclass-ide-login"
+        ],
+        "StudentAcc": [
+          "codeclass-ide-studentaccount"
+        ],
+        "AddClass": [
+          "codeclass-ide-addclass"
+        ],
+        "NavHome": [
+          "codeclass-ide-navhome"
+        ],
+        "JoinRegClass": [
+          "codeclass-ide-join-reg-class"
+        ]
+      }
+    }
+  }
+}
