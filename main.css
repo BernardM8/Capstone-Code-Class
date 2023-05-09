@@ -1,30 +1,141 @@
 *{margin:0;}
 
+body{
+    background-color: rgb(39, 39, 39);
+    /*overflow:scroll;*/
+}
+
 .header {
-    background-color: rgb(105,105,105);
+    background-color: rgb(121, 120, 120);
+    font-family: Arial, Helvetica, sans-serif;
     text-align: center;
-    font-size: 25px;
+    /*-------*/
+    font-size: 24px;
+    /*font-size: 22px;*/
     font-weight: bold;
     color: white;
     padding: 4px;
-    font-family: sans-serif;
+    width: 100%;
 }
 
-.control-panel{
-    background: lightgray;
+
+/* ---Menu Section---*/
+.dropdown {
+    list-style-type: none;
+    margin: 0;
+    padding-left: 50px;
+    padding-right: 50px;
+    overflow: hidden;  
+    display: inline-block;
+    background-color: #646464;
+    color: white;  
+    height: 25px;
     text-align: left;
-    padding: 4px;
-    font-size: 18px;
-    font-family: sans-serif;
-    width: 650px;
+    width: 100%;
+   
+  }
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #7c7c7c;
+    min-width: 100px;
+    box-shadow: 0px 8px 16px 0px rgba(78, 78, 78, 0.2);
+    padding: 10px 14px;
+    z-index: 1;
+  }
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+
+/* ---Sidebar Section---*/
+.Left-sidebar{
+    position: absolute;
+    width: 224px;
+    height: 100%;
+    /*border: solid rgb(255, 253, 253);*/
+    margin-top: 4px;
+    border-radius: 4px;
+    display:inline-block;
+    
 }
+
+.chat-box{
+    position: absolute;
+    width: 222px;
+    /*-------*/
+    font-size: 16px;
+    /*font-size: 14px;*/
+    color: white;
+    /*height: 40%;*/
+    height: 375px;
+    background-color: #7c7c7c;
+    border: solid rgb(255, 253, 253);
+    text-align: center;
+    /*margin-top: 0px;*/
+    top: -854px;
+    border-radius: 4px;
+    left: -4px;
+    display:inline-block;
+}
+.chatArea{
+    resize: none;
+    width: 208px;
+    height:270px;
+    overflow-y: scroll;
+}
+.chatInput{
+    margin-top: 3px;
+    resize: none;
+    width: 208px;
+    height: 40px;
+    overflow-y: scroll;
+}
+
+.ActiveUsers{
+    height: 560px;
+    width: 227px;
+    position: absolute;
+    color: white;
+    /*bottom:-380px;*/
+    /*top: 40%;*/
+    left: -4px;
+    margin-top:-468px;
+    font-size: 14px;
+    /*padding-bottom:40px;*/
+    background-color: #636363;
+ }
+ .ActiveUsers div{
+    padding: 8px;
+    font-size: 16px;
+ }
+ .body-text{
+    margin-left: 50px;
+    font-size: 14px;
+    
+}
+.userList{
+    margin-left: 8px;
+    resize: none;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 206px;
+    height: 500px;
+    overflow-y: scroll;
+    /*font-weight: bold;*/
+    /*-------*/
+    font-size: 16px;
+}
+
+
+/*
 .assign-code{
-    background: lightgray;
+    background: rgb(148, 146, 146);
     text-align: right;
     padding: 4px;
     font-size: 18px;
     font-family: sans-serif;
-    width: 650px; 
+    width: 750px; 
+    margin-left: 200px;
 }
 .AssignButton{
     background: #94b8d4;
@@ -32,53 +143,221 @@
     padding: 3px;
     border: 0;
 }
+*/
 
-.languages{
-    background: white;
-    border: 4px solid gray;
+
+
+/* ------Editor Sections----- */
+.Container_class{
+    margin-left: 229px;
+    display: grid;
+    height: 850px;
+    /*height: 100%;*/
+    /*max-height: 850px;*/
+    width: 100%;
+    /*border: 4px solid rgb(230, 65, 65);*/
+    row-gap:0px;
+    grid-template-columns: 43% 42%;
+    /*grid-template-rows: 36px 52% 200px;*/
+    grid-template-rows: 36px 52% 30%;
+}
+
+.EditorHeaderInstructor{
+    /*position:absolute;*/
+    margin-top: 2px;
+    height: 27px;
+    width: 95.2%;
+    max-width: 752px;
+    background: rgb(126, 125, 125);
+    color: white;
+    border-radius: 2px;
+    text-align: center;
+    padding: 3px;
+    /*font-size: 16px;*/
+    font-family: sans-serif;
+    grid-column: 1;
+    grid-row: 1;
+    /*-------*/
+    font-size: 20px;
+}
+
+.EditorHeaderStudent{
+    grid-row: 1;
+    grid-column: 2;
+    height: 27px;
+    margin-top: 2px;
+    align-self: start;
+    max-width: 702px;
+    width: 90.1%;
+    background: rgb(126, 125, 125);
+    color: white;
+    border-radius: 2px;
+    text-align: center;
+    padding: 3px;
+    /*font-size: 16px;*/
+    /*position: absolute;*/
+    font-family: sans-serif;
+    /*-------*/
+    font-size: 20px;
 }
 
 #editor {
-    display:inline-block;
-    /*float: left;*/
-    height: 400px; 
+    /*display:inline-block;*/
+    /*position: absolute;*/
+    max-height: 500px;
+    height: 99%;
+    overflow-y: scroll;
+    align-self: start;
     text-align: left;
-    border: 6px solid gray;
+    border: 4px solid gray;
+    max-width: 750px;
+    width: 95%;
+    border-radius: 0px;
+    grid-column:1;
+    grid-row: 2;
+    /*-------*/
     font-size: 16px;
-    width: 650px;
 }
-
 
 #editor2 {
-    display:inline-block;
-    /*float: right;*/
-    /*overflow-y: scroll;*/
-    height: 400px; 
-    text-align: right;
-    border: 11px solid gray;
-    font-size: 14px;
-    width: 550px;
-    margin-left: 60px;
+    /*display:inline-block;*/
+    /*position: absolute;*/
+    max-height: 500px;
+    height: 99%; 
+    overflow-y: scroll;
+    text-align: left;
+    border: 4px solid gray;
+    border-radius: 0px;
+    /*font-size: 14px;*/
+    max-width: 700px;
+    width: 90%;
+    grid-column:2;
+    grid-row: 2;
+    /*-------*/
+    font-size: 16px;
 }
 
+.control-panel{
+    /*position: absolute;*/
+    background: rgb(126, 125, 125);
+    color: white;
+    text-align: left;
+    padding: 3px;
+    /*------*/
+    font-size: 20px;
+    font-family: sans-serif;
+    max-width: 752px;
+    width: 95.3%;
+    border-radius: 2px;
+    left: -3px;
+    height: 40px;
+    grid-column:1;
+    grid-row: 3;
+    /*-------*/
+    font-size: 16px;
+    
+}
+.languages{
+    background: white;
+    border: 3px solid gray;
+    padding: 4px; 
+    /*-------*/
+    font-size: 16px;
+    
+}
 .button-container{
     text-align: left;
     padding: 4px;
+    padding-left: 35px;
 }
 
 .btn{
+    /*position:absolute;*/
     background: #57a958;
     color: white;
-    padding: 8px;
-    border: 0;
+    padding-right: 12px;
+    padding-left: 12px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 4px;
+    /*margin-left: 850px;*/
+    float: right;
+    margin-right: 5px;
+    margin-top: -30px;
+}
+
+
+.togglebutton-container{
+    grid-column:2;
+    grid-row: 4;
+    margin-top: -247px;
+}
+
+.togUp{
+    background: #777777;
+    color: white;
+    padding-right: 12px;
+    padding-left: 12px;
+    padding-top: 0px;
+    padding-bottom: 15px;
+    border-radius: 4px;
+    width:50px;
+    height: 28px;
+    font-size: x-large;
+    text-align: center;
+    margin-left: 5px;
+    margin-top: -20
+    px;
+}
+.togDown{
+    background: #777777;
+    color: white;
+    padding-right: 12px;
+    padding-left: 12px;
+    padding-top: 0px;
+    padding-bottom: 15px;
+    border-radius: 4px;
+    width:50px;
+    height: 28px;
+    font-size: x-large;
+    text-align: center;
 }
 
 .output{
+    /*position: absolute;*/
     background: hsla(0, 0%, 0%, 0.815);
-    color: aliceblue;
+    color: rgb(229, 233, 190);
     padding: 4px;
-    border: 6px solid gray;
-    min-height: 150px;
-    width: 642px;
+    border: 4px solid gray;
+    border-radius: 6px;
+    min-height: 125px;
+    max-height: 1000px;
+    width: 98.65%;
+    max-width: 755px;
+    font-size: 16px;
     resize: none;
+    margin-left: -3px;
+    grid-column:1;
+    grid-row: 4;
+    overflow-y: scroll;
+}
+
+.output2{
+    background: hsla(0, 0%, 0%, 0.815);
+    color: rgb(229, 233, 190);
+    font-size: 16px;
+    padding: 4px;
+    border: 4px solid gray;
+    border-radius: 6px;
+    min-height: 125px;
+    max-height: 1000px;
+    height: 125px;
+    width: 89.5%;
+    max-width: 698px;
+    resize: none;
+    margin-left: -2px;
+    margin-top: 40px;
+    grid-column:2;
+    grid-row: 3;
+    overflow-y: scroll;
 }
