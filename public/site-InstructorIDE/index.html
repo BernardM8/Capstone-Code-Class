@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CodeClass IDE</title>
+    <link rel="stylesheet" href="main.css"/>
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase.js"></script>
+
+    <!-- Ace -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.5/ace.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="libAce/ace.js"></script>
+    <script src="libAce/theme-monokai.js"></script>
+    
+    <!-- IDE app.mjs -->
+    <script type="module" src="bundle.js"></script>
+    <!--script type="module" src="app.mjs"></script-->
+    
+    <!-- JDoodle API -->
+    <!--script src="https://api.jdoodle.com/v1/execute"></script-->
+</head>
+
+<body >
+  <div class="header">Code-Class</div>
+
+  <!-- Menu bar -->
+  <div class="dropdown">
+    <span>Menu</span>&nbsp;&nbsp;&nbsp;&nbsp;
+    <span>Edit</span>&nbsp;&nbsp;&nbsp;&nbsp;
+    <span>View</span>&nbsp;&nbsp;&nbsp;&nbsp;
+    <span>Help</span>&nbsp;&nbsp;&nbsp;&nbsp;
+
+    <div class="dropdown-content">
+      <p>
+        <a class="Logout" href="https://codeclass-ide-navhome.web.app">Logout</a>
+      </p>
+    </div>
+  </div>
+  
+  <!--Assign code problem section-->
+  <!--div class="assign-code">
+    Assign Code Problem
+    &nbsp; &nbsp;
+    <select id="assign" class="assign">
+      <option value = "practice"> practice </option>
+      <option value = "timed"> timed </option>
+    </select>
+    <br>
+  <input class="AssignButton" type="submit" value="Assign" onclick="assignProblem()"/>
+  </div-->
+
+  <div class="Container_class">
+    <div class="EditorHeaderInstructor">Instructor</div>
+      <!--editor1 sections to enter code-->
+    <div class="Editor" id="editor"> <label for="editor"></label></div>
+      <!--Language change section-->
+    <div class="control-panel">&nbsp;&nbsp;Language &nbsp; &nbsp;
+      <select id="languages" class="languages" onchange="changeLanguage()">
+        <!--option value = "Select"> Select </option-->
+        <option value = "java"> Java </option>
+        <option value = "python"> Python </option>
+        <option value = "node"> Node JS </option>
+        <option value = "c++"> c++ </option>
+        <option value = "c"> c </option>
+        <option value = "Perl"> Perl </option>
+        <option value = "PHP"> php </option>
+        <option value = "Ruby"> ruby </option>
+        <option value = "Haskell"> Haskell </option>
+        <option value = "Scala"> scala </option>
+        <option value = "SQL"> sql </option>
+        <option value = "Prolog"> prolog </option>
+        <option value = "R Language"> R Language </option>
+        <option value = "Fortran"> Fortran </option>
+        <option value = "Kotlin"> Kotlin </option>
+      </select>      
+      <!--Run button-->
+      <div class="button-container">
+        <button class="btn" onclick="executeCode()"> Run </button>
+      </div>
+      <!--Output section for compiler1-->
+      <div class="output" id="output"></div>
+    </div>
+  
+
+  <div class="EditorHeaderStudent" id="EditorHeaderStudent">Student</div>
+  <!--editor2 sections to enter code-->
+  <div class="Editor2" id="editor2"> <label for="editor2"></label></div>
+  <div class="togglebutton-container">
+    <button class="togDown" onclick="toggleDown()"> &#8681; </button>
+    <button class="togUp" onclick="toggleUp()"> &#8679; </button>
+  </div>
+  <!--Output section for compiler2-->
+  <div class="output2" id="output2"></div>
+</div>
+
+    
+  <!--Left Sidebar section-->
+  <div class="Left-sidebar" id="Left-sidebar">
+    <!--chat message section-->
+    <div class="chat-box" id="chat-box">chat-box
+      <textarea id="chatArea" class="chatArea" readonly></textarea>
+      <!--textarea id="chatArea" class="chatArea" rows="18" cols="29" readonly></textarea-->
+      <textarea id="chatInput" class="chatInput" ></textarea>
+      <!--textarea id="chatInput" class="chatInput" rows="3" cols="29" ></textarea-->
+      <button onclick="textPost()">Post</button>
+      <button onclick="textClear()">Clear</button>
+    </div>
+      <!--active user section-->
+      <div class="ActiveUsers" id="ActiveUsers">
+        <div class="body-text" id="body-text"> Active Users</div>
+        <textarea id="userList" class="userList" readonly></textarea>
+        <!--textarea id="userList" class="userList" rows="26" cols="20" readonly></textarea-->
+        <!--div class="body-text" id="body-text">User 2</div-->
+        
+      </div>
+  </div>
+
+</body>
+</html> 
