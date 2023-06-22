@@ -23,15 +23,26 @@ export const Register = (props) => {
                 last_login : Date.now(),
                 //account_type : act_type
             }).then(()=>{
-                alert('User Created!!')
-                window.location.href = "/Home"
+                set(ref(database,name),{
+                    codeCompiler : "",
+                    codeEditor : "", 
+                    codeLanguage :"",
+                    codeTrigger :"", 
+                }).then(()=>{
+                    alert('User Created!!');
+                    window.location.href = "/Session";
+                })
+            }).catch((error) => {
+                var error_code = error.code;
+                var error_message = error.message
+                alert(error_message);
             })
-        }).catch((error) => {
-            var error_code = error.code
-            var error_message = error.message
-            alert(error_message)
-        })
+    })}
+
+    function handleClickLogin(){
+        window.location.href = `/Login`;
     }
+
 
     return (
         <div className="auth-form-container">
@@ -46,7 +57,7 @@ export const Register = (props) => {
             <input value ={pass} onChange={(e)=> setPass(e.target.value)} type="password" id="password" placeholder="*******"/> 
                 <button className="submit-btn" type = "submit">Register</button>
             </form> 
-            <button className="link-btn" onClick={()=> props.onFormSwitch(`login`)}>Already have an account? Login here</button>
+            <button className="link-btn" onClick={handleClickLogin}>Already have an account? Login here</button>
         </div>
     )
 }

@@ -1,0 +1,7 @@
+Code-Class  |  React, CSS, Javascript, Firebase, Firestore, Authentication, Cloud Function
+Demo Link: https://capstone-ide.web.app/
+    • Designed and developed a coding website that facilitates real-time collaboration in a classroom environment for multiple users.
+    • Implemented an IDE consisting of an Ace editor integrated with Firebase for seamless real-time code editing and synchronization.
+    • Incorporated a compiler feature that leverages a cloud function to communicate with an external Jdoodle API service, enabling code execution in 14 programming languages.
+    • Implemented a user display feature that shows all users currently present in the classroom, promoting a sense of community and interaction.
+    • Utilized Firebase authentication for secure user sign-in and room tracking.

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import {BrowserRouter, Routes, Route } from "react-router-dom";
 import {initializeApp} from "firebase/app";
 import {getAuth} from "firebase/auth";
-import {getDatabase, ref } from "firebase/database";
+import {getDatabase } from "firebase/database";
 import { getFirestore } from 'firebase/firestore';
 //import logo from './logo.svg';
 import './App.css';
@@ -31,9 +31,6 @@ export const auth = getAuth(app)
 export const database = getDatabase(app)
 export const firestore = getFirestore(app);
 
-/*export const isAuthenticated = () => {
-  return auth.currentUser !== null;
-}*/
 
 function App() {
   const [currentForm, setCurrentForm] = useState(`login`);
@@ -45,8 +42,10 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={currentForm === "login" ? <Login onFormSwitch={toggleForm}/>: <Register onFormSwitch={toggleForm}/>}/>
-          <Route path="/Home" element={<Home/>}/>
+          {/*<Route path="/Login" element={currentForm === "login" ? <Login onFormSwitch={toggleForm}/>: <Register onFormSwitch={toggleForm}/>}/>*/}
+          <Route path="/Login" element={<Login/>}/>
+          <Route path="/Register" element={<Register/>}/>
+          <Route path="/" element={<Home/>}/>
           <Route path="/About" element={<About/>}/>
           <Route path="/Session" element={<Session/>}/>
           <Route path="/Room/:roomId" Component={RoomPage}/>

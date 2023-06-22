@@ -25,13 +25,17 @@ export const Login = (props) => {
                     }).then(()=>{
                         //console.log(`userlogged in:`,user);
                         alert('Loggin in successful! ')
-                        window.location.href = "/Home"
+                        window.location.href = "/Session"
                     })})
         }).catch((error) => {
             var error_code = error.code
             var error_message = error.message
             alert(error_message)
         })
+    }
+
+    function handleClickRegister(){
+        window.location.href = `/Register`;
     }
 
     return (
@@ -45,7 +49,7 @@ export const Login = (props) => {
                 <input value ={pass} onChange={(e)=> setPass(e.target.value)} type="password" id="password" placeholder="*******"/>
                 <button className="submit-btn" type = "submit">Login</button>
             </form> 
-            <button className="link-btn" onClick={()=> props.onFormSwitch(`register`)}>Don`t have an account? Register here</button>
+            <button className="link-btn" onClick={handleClickRegister}>Don`t have an account? Register here</button>
         </div>
     )
 }

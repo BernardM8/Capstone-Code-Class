@@ -37,17 +37,18 @@ export const Session = (props) => {
     const join = async () => {
         if (selectedOption && user.uid){
             console.log("selectedOption = "+selectedOption);
+            console.log("user.uid = "+user.uid);
             try{
                 const usersDataRef = ref(database, `users/`+user.uid+`/full_name/`)
-                const activeUsersDataRef = ref(database, selectedOption+`/activeUsers`)
+                //const activeUsersDataRef = ref(database, selectedOption+`/activeUsers`)
 
                 const userNameObj = await get(usersDataRef);
-                const activelistObj = await get(activeUsersDataRef);
+                //const activelistObj = await get(activeUsersDataRef);
 
-                if (activelistObj.exists()){
-                    const activelist = activelistObj.val();
+                if (userNameObj.exists()){
+                    //const activelist = activelistObj.val();
                     const userName = userNameObj.exists() ? userNameObj.val(): ``;
-                    console.log("activelist = "+activelist);
+                    //console.log("activelist = "+activelist);
                     console.log("userName = "+userName);
 
                     //const combActiveList= activelist+","+userName;
@@ -90,6 +91,7 @@ export const Session = (props) => {
         fetchData();
     }, []);
     
+    
 
     const handleOptionChange = (e) => {
         setSelectedOption(e.target.value);
@@ -100,9 +102,9 @@ export const Session = (props) => {
         <div className={SessionCSS.mainContainer}>
             <h3 className={SessionCSS.h3}>CODE-CLASS</h3>
             <div className={SessionCSS.topnav} href = "Topnav.css">
-                <a className="active" href="/Home">Home</a>
-                <a href="/About">About</a>
-                <a href="/Session">Session</a>
+                <a className={SessionCSS.a1} href="/">Home</a>
+                <a className={SessionCSS.a2} href="/About">About</a>
+                {/*<a href="/Session">Session</a>*/}
                 <button className={SessionCSS.logoutBtn} onClick={handleClick}>Log out</button>
             </div>
             <p className={SessionCSS.p1}>Select a Session to join </p>

@@ -1,0 +1,319 @@
+*{margin:0;}
+
+.header {
+    /*background-color: rgb(121, 120, 120);*/
+    background-color: rgb(51,45,45);
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    padding: 2spx;
+    width: 100%;
+}
+
+
+/*_____Menu Section____*/
+.dropdown {
+    list-style-type: none;
+    /*overflow: hidden;  */
+    /*justify-items: center;*/
+    display: inline-block;
+    /*display: table;*/
+    background-color: #646464;
+    color: white;  
+    /*vertical-align: middle;*/
+    height: 35px;
+    text-align: left;
+    width: 100%;
+  }
+  .span{
+    line-height: 32px;
+    vertical-align: middle;
+    padding: 8px;
+    font-size: 17px;
+  }
+  .dropdownContent {
+    /*display: table-cell;*/
+    /*vertical-align: middle;*/
+    background-color: #7c7c7c;
+    min-width: 100px;
+    box-shadow: 0px 8px 16px 0px rgba(78, 78, 78, 0.2);
+    padding: 6px 14px;
+    z-index: 1;
+  }
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  .Logout{ 
+    float: right;
+    background-color: #333;
+    border-color: white;
+    padding: 4px 12px;
+    color: white;
+    font-size: 14px;
+    border-radius: 3px;  
+    margin-right: 20px;
+    margin-top: 4px;
+  }
+
+
+/* ______Sidebar Section_____*/
+.LeftSidebar.container{
+    width: 18%;
+    height: 82%;
+    margin-top: 4px;
+    border-radius: 4px;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: left;
+}
+
+.chatBox{
+    margin-top: 3px;
+    z-index: 2;
+    font-size: 16px;
+    color: white;
+    height: 45%;
+    background-color: #7c7c7c;
+    border: solid rgb(255, 253, 253);
+    text-align: center;
+    border-radius: 4px;
+    left: -4px;
+}
+.chatArea{
+    resize: none;
+    width: 93%;
+    height: 70%;
+    overflow-y: scroll;
+}
+.chatInput{
+    margin-top: 3px;
+    resize: none;
+    width: 93%;
+    height: 40px;
+    overflow-y: scroll;
+}
+
+.ActiveUsers{
+    z-index: 1;
+    margin-top: 4px;
+    height:31%;
+    width:100%;
+    color: white;
+    left: -4px;
+    border-radius: 4px; 
+    font-size: 14px;
+    background-color: #636363;
+ }
+ .ActiveUsers div{
+    padding: 8px;
+    font-size: 16px;
+ }
+ .bodyText{
+    text-align: center;
+    font-size: 14px;
+}
+.userList{
+    margin: center;
+    resize: none;
+    font-family: Arial;
+    width: 84% !important;
+    height: 79% !important;
+    text-align: left;
+    padding-left: 27px;
+    padding-top: 6px;
+    overflow-y: scroll;
+    font-size: 16px;
+    /*background-color: rgb(51,45,45);*/
+    background-color: #272822;
+    color: #6db96e;
+    border-radius: 3px;
+}
+
+
+
+.MainContainer_class{
+    display:grid;
+    grid-template-columns: 20% 1fr;
+    gap:3px;
+}
+
+/* ------Editor Sections----- */
+.EditorContainer{
+    display: grid;
+    height: 90%;
+    width: 100%;
+    grid-template-columns: 52% 48%;
+    /*grid-template-rows: 36px 52% 200px;*/
+    align-items: flex-start;/*Align items to top*/
+    justify-items: center;
+}
+
+.innerEditor1Container{
+    height: 85%;
+    width: 97%;
+    border: 3px solid gray;
+    margin-top: 3px;
+    justify-items: center;
+    gap:3px;
+}   
+
+.innerEditor2Container{
+    height: 85%;
+    width: 97%;
+    border: 3px solid gray;
+    margin-top: 3px;
+    justify-items: center;
+}
+
+.EditorHeaderInstructor{
+    height: 27px;
+    width: 99.3%;
+    place-self: center;
+    justify-items: center;
+    background: rgb(126, 125, 125);
+    color: white;
+    text-align: center;
+    padding: 3px;
+    font-family: sans-serif;
+    font-size: 20px;
+}
+
+.EditorHeaderStudent{
+    height: 27px; 
+    align-self: center;
+    width: 99%;
+    background: rgb(126, 125, 125);
+    color: #5fdb61;
+    text-align: center;
+    padding: 3px;
+    place-self: center;
+    font-family: sans-serif;
+    font-size: 20px;
+}
+
+.editor {
+    margin-top: -2px;
+    height: 54% !important;
+    overflow-y: scroll;
+    align-self: start;
+    text-align: left;
+    border: 3px solid gray;
+    width: 99.3% !important;
+    font-size: 16px !important;
+}
+
+.editor2 {
+    margin-top: -2px;
+    height: 54% !important;
+    overflow-y: scroll;
+    text-align: left;
+    border: 3px solid gray;
+    border-radius: 0px;
+    width: 99% !important;
+    font-size: 16px !important;
+}
+
+.controlPanel{
+    align-items: top;
+    background: rgb(126, 125, 125);
+    color: white;
+    text-align: left;
+    font-size: 17px;
+    font-family: sans-serif;
+    width: 99.3%;
+    height: 38px;
+    padding: 3px;
+    justify-self: center;
+}
+
+.languages{
+    background: white;
+    border: 3px solid gray;
+    padding: 4px; 
+    font-size: 16px;
+    
+}
+.button.container{
+    text-align: left;
+    padding: 4px;
+    padding-left: 35px;
+}
+
+.btn{
+    background: #57a958;
+    color: white;
+    padding-right: 12px;
+    padding-left: 12px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 4px;
+    float: right;
+    margin-right: 5px;
+    margin-top: -30px;
+}
+
+
+.togglebuttonContainer{
+    height: 40px;
+    padding-left: 20px;
+    margin-top: -2px;
+    justify-self: left;
+}
+
+.togUp{
+    background: #777777;
+    color: white;
+    padding-right: 12px;
+    padding-left: 12px;
+    padding-top: -4px;
+    padding-bottom: -4px;
+    border-radius: 4px;
+    font-size: x-large;
+    text-align: center;
+    margin-top: 6px;
+    margin-left: 5px;
+}
+.togDown{
+    background: #777777;
+    color: white;
+    padding-right: 12px;
+    padding-left: 12px;
+    padding-top: -4px;
+    padding-bottom: -4px;
+    border-radius: 4px;
+    margin-top: 6px;
+    font-size: x-large;
+    text-align: center;
+}
+
+.output{
+    /*background: hsla(0, 0%, 0%, 0.815);*/
+    background-color: #272822;
+    color: rgb(229, 233, 190);
+    border: 4px solid gray;
+    min-height: 125px;
+    height: 30.8%;
+    width: 99%;
+    font-size: 16px;
+    text-align: left;
+    overflow-y: scroll;
+}
+
+.output2{
+    /*background: hsla(0, 0%, 0%, 0.815);*/
+    background-color: #272822;
+    color: rgb(229, 233, 190);
+    font-size: 16px;
+    border: 4px solid gray;
+    text-align: left;
+    min-height: 125px;
+    max-height: 1000px;
+    width: 99%;
+    height: 30.8%;
+    margin-left: -2px;
+    margin-top: 7px;
+    justify-self: center;
+    overflow-y: scroll;
+}
